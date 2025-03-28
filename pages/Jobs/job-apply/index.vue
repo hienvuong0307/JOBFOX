@@ -29,9 +29,6 @@
 </template>
 
 <script setup>
-definePageMeta({
-  layout: 'client'
-})
 import { ref } from 'vue';
 import FormAplly from '~/components/Jobs/JobApply/FormApply.vue';
 const items = ref([{ label: 'Jobnova' }, { label: 'Job' }, { label: 'Job Apply' }]);

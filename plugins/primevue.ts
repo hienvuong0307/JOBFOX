@@ -17,6 +17,10 @@ import InputIcon from 'primevue/inputicon';
 import Menu from 'primevue/menu';
 import Listbox from 'primevue/listbox';
 import DataView from 'primevue/dataview';
+import Checkbox from 'primevue/checkbox';
+import Carousel from 'primevue/carousel';
+
+
 
 
 import 'primevue/resources/themes/lara-light-blue/theme.css'; 
@@ -41,5 +45,9 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('Menu', Menu); 
   nuxtApp.vueApp.component('Listbox', Listbox); 
   nuxtApp.vueApp.component('DataView', DataView); 
+  nuxtApp.vueApp.component('Checkbox', Checkbox); 
+  nuxtApp.vueApp.component('Carousel', Carousel); 
+
+
 
 });

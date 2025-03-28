@@ -6,7 +6,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/content", "nuxt-primevue"],
+  modules: [
+    "@nuxt/content", 
+    "nuxt-primevue", 
+    "@nuxtjs/tailwindcss"
+  ],
   primevue: {
     options: {
       ripple: true,

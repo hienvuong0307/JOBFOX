@@ -24,9 +24,6 @@
 </template>
 
 <script setup>
-  definePageMeta({
-  layout: 'client'
-}) 
 import { ref } from 'vue';
 import FormPost from '~/components/Jobs/JobPost/FormPost.vue';
 const items = ref([{ label: 'Jobnova' }, { label: 'Job' }, { label: 'Job Post' }]);

@@ -1,7 +1,10 @@
+<script setup>
+const route = useRoute();
+const layout = computed(() => route.meta.layout || "default"); 
+</script>
+
 <template>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout :name="layout">
+    <NuxtPage />
+  </NuxtLayout>
 </template>

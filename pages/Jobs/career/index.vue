@@ -81,9 +81,6 @@
 </template>
   
   <script setup>
-  definePageMeta({
-  layout: 'client'
-})  
 import { onMounted, ref, watch } from 'vue';
 import ServiceJob from '~/components/Jobs/Career/ServicesJob.vue';
 import Oppening from '~/components/Jobs/Career/Oppening.vue';
