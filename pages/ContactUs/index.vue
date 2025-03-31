@@ -22,27 +22,27 @@
             <div class="card w-4/5 mt-[5rem]" style="margin-left: 15rem">
                 <div class="flex gap-1 items-center">
                     <img class="max-w-full w-[550px] h-[560px]" src="https://jobnova-shreethemes.vercel.app/static/media/contact.484ab30330e15fe0f16978ef279af06c.svg" />
-                    <div class="shadow-[0_0_3px_#1e293b26] rounded-[6px] p-6 w-[490px] h-[480px]">
+                    <div class="shadow-[0_0_3px_#1e293b26] rounded-[6px] p-6 w-[490px] h-[510px]">
                         <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem">
                             <span style="font-weight: 500; font-size: 22px; font-weight: 600">Get in touch !</span>
                         </div>
                         <div style="display: grid; align-items: center; justify-content: space-between; margin-top: 1rem">
                             <span style="font-weight: 500; font-size: 1.2rem">Your Name<span style="color: crimson; margin-left: 0.2rem; font-size: 1.2rem">*</span></span>
-                            <InputText name="username" type="text" placeholder="Name:" style="width: 348px; margin-top: 0.5rem" />
+                            <InputText name="username" type="text" placeholder="Name:" style="padding-left: 10px;width: 450px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
                         </div>
                         <div style="display: grid; align-items: center; justify-content: space-between; margin-top: 1rem">
                             <span style="font-weight: 500; font-size: 1.2rem">Your Email<span style="color: crimson; margin-left: 0.2rem; font-size: 1.2rem">*</span></span>
-                            <InputText name="username" type="text" placeholder="Email:" style="width: 348px; margin-top: 0.5rem" />
+                            <InputText name="username" type="text" placeholder="Email:" style="padding-left: 10px;width: 450px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
                         </div>
                         <div style="display: grid; align-items: center; justify-content: space-between; margin-top: 1rem">
                             <span style="font-weight: 500; font-size: 1.2rem">Subject</span>
-                            <InputText name="username" type="text" placeholder="Subject:" style="width: 348px; margin-top: 0.5rem" />
+                            <InputText name="username" type="text" placeholder="Subject:" style="padding-left: 10px;width: 450px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
                         </div>
                         <div style="display: grid; align-items: center; justify-content: space-between; margin-top: 1rem">
                             <span style="font-weight: 500; font-size: 1.2rem">Comments<span style="color: crimson; margin-left: 0.2rem; font-size: 1.2rem">*</span></span>
-                            <InputText name="username" type="text" placeholder="Message:" style="width: 348px; margin-top: 0.5rem" />
+                            <InputText name="username" type="text" placeholder="Message:" style="padding-left: 10px;width: 450px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
                         </div>
-                        <div style="display: grid; align-items: center; justify-content: center; margin-top: 1.5rem; margin-left: 0.8rem">
+                        <div style="display: grid; align-items: center; justify-content: center; margin-top: 1.5rem; margin-left: 0.8rem;">
                             <Button
                                 label="SEND MESSAGE"
                                 class="!h-12 text-white mr-2"

@@ -7,11 +7,10 @@ const { containerClass, layoutState } = useLayout()
 </script>
 
 <template>
-  <div class="layout-wrapper" :class="containerClass">
-    <AppHeader />
-
-    <div class="layout-main-container">
-      <div class="layout-main">
+  <AppHeader />
+  <div class="layout-wrapper overflow-visible" :class="containerClass">
+    <div class="layout-main-container flex overflow-visible">
+      <div class="layout-main flex-1 overflow-visible">
         <slot></slot>
       </div>
     </div>
@@ -23,5 +22,9 @@ const { containerClass, layoutState } = useLayout()
 </template>
 
 <style>
-
+.layout-wrapper,
+.layout-main-container,
+.layout-main {
+  overflow: visible !important; /* Đảm bảo sticky hoạt động */
+}
 </style>

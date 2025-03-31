@@ -2,13 +2,15 @@
     <div class="w-1/3 flex items-center">
         <div class="grid grid-cols-2 gap-4">
             <div v-for="x in img" :key="x" class="">
-                <Card style=" overflow: hidden">
+                <Card style=" overflow: visible" class="h-[67px] w-[200px] bg-[#f8f9fc] ">
                     <template #content>
-                        <div class="flex justify-center mt-3 gap-5 items-center">
-                            <div class="bg-white !border-solid !border-slate-100 rounded-md border w-16 h-16 flex justify-center ">
+                        <div class="flex justify-center gap-5 items-center">
+                            <div>
+                            <div class="bg-white !border-solid !border-slate-200 rounded-md border w-14 h-14  absolute -mt-[2.6rem] -ml-11 justify-center ">
                                 <img :src="x.img" class="w-10 h-10 m-2 rounded-md" alt="">
                             </div>
-                            <div>
+                            </div>
+                            <div class="-mt-7 ml-5">
                                 <h2 class="font-bold text-xl">{{x.name}}</h2>
                                 <span class="opacity-80">{{ x.vacan }}</span>
                             </div>

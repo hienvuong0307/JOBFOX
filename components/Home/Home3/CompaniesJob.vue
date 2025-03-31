@@ -4,16 +4,19 @@
                 <h2 class="text-4xl text-left font-bold opacity-90">Latest Blog or News</h2>
                 <p class="text-left opacity-75 pt-5 max-w-[440px]">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
             </div>
-        <div class="grid grid-cols-2 gap-4 mt-[10rem]">
+            <div class="grid grid-cols-2 gap-4 mt-[4rem]">
             <div v-for="x in img" :key="x" class="">
-                <Card style=" overflow: hidden">
+                <Card style=" overflow: visible" class="h-[67px] w-[200px] bg-[#f8f9fc] ">
                     <template #content>
-                        <div class="flex justify-center mt-3 gap-5 items-center">
-                            <div class="bg-white !border-solid !border-slate-100 rounded-md border w-16 h-16 flex justify-center ">
-                                <img :src="x.img" class="w-10 h-10 m-2 rounded-md" alt="">
-                            </div>
+                        <div class="flex justify-center gap-5 items-center">
                             <div>
-                                <h2 class="font-bold text-xl">{{x.name}}</h2>
+                                <div
+                                    class="bg-white !border-solid !border-slate-200 rounded-md border w-14 h-14  absolute -mt-[2.6rem] -ml-11 justify-center ">
+                                    <img :src="x.img" class="w-10 h-10 m-2 rounded-md" alt="">
+                                </div>
+                            </div>
+                            <div class="-mt-7 ml-5">
+                                <h2 class="font-bold text-xl">{{ x.name }}</h2>
                                 <span class="opacity-80">{{ x.vacan }}</span>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card w-4/5">
+    <div class="card w-4/5 bg-[white]">
         <div class="grid grid-cols-3 gap-4">
             <div class="col-span-1 flex flex-col">
                 <div class="sticky top-[5rem] self-start">

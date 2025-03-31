@@ -33,6 +33,9 @@
 </template>
   
   <script setup>
+  definePageMeta({
+  layout: 'client'
+});
 import { onMounted, ref, watch } from 'vue';
 import DetailOne from '~/components/Jobs/JobDetail/JobDetail1/DetailOne.vue';
 import Vacancies from '~/components/Jobs/JobDetail/JobDetail1/Vacancies.vue';

@@ -19,11 +19,11 @@
                 </div>
                 <div style="display: grid; align-items: center; justify-content: space-between; margin-top: 1rem">
                     <span style="font-weight: 600; font-size: 1.2rem">Your Email</span>
-                    <InputText name="username" type="text" placeholder="example@website.com" style="width: 315px; margin-top: 0.5rem" />
+                    <InputText name="username" type="text" placeholder="example@website.com" style="padding-left: 10px;width: 315px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
                 </div>
                 <div style="display: grid; align-items: center; justify-content: space-between; margin-top: 1rem">
                     <span style="font-weight: 600; font-size: 1.2rem">Password</span>
-                    <InputText name="username" type="password" placeholder="Password" style="width: 315px; margin-top: 0.5rem" />
+                    <InputText name="username" type="password" placeholder="Password" style="padding-left: 10px;width: 315px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
                 </div>
 
 

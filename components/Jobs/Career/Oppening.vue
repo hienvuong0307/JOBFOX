@@ -13,7 +13,7 @@
                         <p class="text-[20px] font-bold">Frontend Developer</p>
                         <p class="text-[16px] text-[#94a3b8]">Total Openings: 1</p>
                     </div>
-                    <Button :label="'APPLY NOW'" class="custom-btn !text-xl rounded-full px-6 py-3" icon="pi pi-arrow-right" iconPos="right" style="color: #0b63f3; background-color: #3b82f60d ; border: 2px solid #3b82f60d " />
+                    <Button :label="'APPLY NOW'" class="custom-btn !text-[13px] px-6 py-3" icon="pi pi-arrow-right" iconPos="right" style="color: #0b63f3!important; background-color: #3b82f60d!important; border: 1px solid #3b82f60d!important;width: 155px; height:40px " />
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                         <p class="text-[20px] font-bold">Backend Developer</p>
                         <p class="text-[16px] text-[#94a3b8]">Total Openings: 3</p>
                     </div>
-                    <Button :label="'APPLY NOW'" class="custom-btn !text-xl rounded-full px-6 py-3" icon="pi pi-arrow-right" iconPos="right" style="color: #0b63f3; background-color: #3b82f60d ; border: 2px solid #3b82f60d " />
+                    <Button :label="'APPLY NOW'" class="custom-btn !text-[13px] px-6 py-3" icon="pi pi-arrow-right" iconPos="right" style="color: #0b63f3!important; background-color: #3b82f60d!important; border: 2px solid #3b82f60d!important;width: 155px; height:40px " />
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                         <p class="text-[20px] font-bold">Web Developer</p>
                         <p class="text-[16px] text-[#94a3b8]">Total Openings: 2</p>
                     </div>
-                    <Button :label="'APPLY NOW'" class="custom-btn !text-xl rounded-full px-6 py-3" icon="pi pi-arrow-right" iconPos="right" style="color: #0b63f3; background-color: #3b82f60d ; border: 2px solid #3b82f60d " />
+                    <Button :label="'APPLY NOW'" class="custom-btn !text-[13px] px-6 py-3" icon="pi pi-arrow-right" iconPos="right" style="color: #0b63f3!important; background-color: #3b82f60d!important; border: 2px solid #3b82f60d!important;width: 155px; height:40px " />
                 </div>
             </div>
         </div>

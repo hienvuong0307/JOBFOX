@@ -64,7 +64,7 @@ onUnmounted(() => {
         class="py-2 px-4 flex justify-end">
         <div class="flex items-center justify-end w-full">
             <div class="layout-topbar-logo-container flex justify-end">
-                <nuxt-link to="/" class="flex items-center">
+                <nuxt-link to="/home/home2" class="flex items-center">
                     <svg viewBox="0 0 54 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2"></svg>
                     <div class="flex w-full justify-end items-center">
                         <img :src="scrollY === 0 ? logoLight : logoDark" alt="Logo" class="h-5" />
@@ -82,13 +82,13 @@ onUnmounted(() => {
                         <div class="invisible-zone"></div>
                         <div v-if="activeDropdown === 'home'" class="dropdown-menu w-[12rem] h-[9.5rem] mt-[0.5rem]">
                             <div class="absolute top-[15%] space-y-5">
-                                <nuxt-link to="/homeone" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/home/home1" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> HERO ONE
                                 </nuxt-link>
-                                <nuxt-link to="/hometwo" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/home/home2" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> HERO TWO
                                 </nuxt-link>
-                                <nuxt-link to="/homethree" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/home/home3" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> HERO
                                     THREE </nuxt-link>
                             </div>
@@ -105,7 +105,7 @@ onUnmounted(() => {
                         <div class="invisible-zone"></div>
                         <div v-if="activeDropdown === 'jobs'" class="dropdown-menu w-[14rem] h-[20rem] mt-[0.5rem]">
                             <div class="absolute top-[9%] space-y-5">
-                                <nuxt-link to="/jobcate" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/jobs/job-categories" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
                                     CATEGORIES</nuxt-link>
                                 <div class="relative group">
@@ -118,16 +118,16 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.77rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/jobgridone" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-grid-one" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     GRID ONE </nuxt-link>
-                                                <nuxt-link to="/jobgridtwo" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-grid-two" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     GRID TWO </nuxt-link>
-                                                <nuxt-link to="/jobgridthree" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-grid-three" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     GRID THREE </nuxt-link>
-                                                <nuxt-link to="/jobgridfour" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-grid-four" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     GRID FOUR </nuxt-link>
                                             </div>
@@ -145,10 +145,10 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/joblistone" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-list-one" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     LIST ONE </nuxt-link>
-                                                <nuxt-link to="/joblisttwo" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-list-two" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]"> JOB
                                                     LIST TWO </nuxt-link>
                                             </div>
@@ -166,13 +166,13 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.5rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/jobdetailone" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-detail-one" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     DETAIL ONE </nuxt-link>
-                                                <nuxt-link to="/jobdetailtwo" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-detail-two" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     DETAIL TWO </nuxt-link>
-                                                <nuxt-link to="/jobdetailthree" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/jobs/job-detail-three" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
                                                     DETAIL THREE </nuxt-link>
                                             </div>
@@ -180,13 +180,13 @@ onUnmounted(() => {
                                     </div>
                                 </div>
 
-                                <nuxt-link to="/jobapply" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/jobs/job-apply" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
                                     APPLY</nuxt-link>
-                                <nuxt-link to="/jobpost" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/jobs/job-post" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
                                     POST</nuxt-link>
-                                <nuxt-link to="/career" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/jobs/career" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">CAREER</nuxt-link>
                             </div>
                         </div>
@@ -203,12 +203,12 @@ onUnmounted(() => {
                         <div class="invisible-zone"></div>
                         <div v-if="activeDropdown === 'employers'" class="dropdown-menu w-[16rem] h-[7rem] mt-[0.5rem]">
                             <div class="absolute top-[19%] space-y-5">
-                                <nuxt-link to="/empoyers" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/employers/employers" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     EMPLOYERS </nuxt-link>
-                                <nuxt-link to="/empoyersprofile" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/employers/employer-profile" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
-                                    EMPLOYERS PROFILE </nuxt-link>
+                                    EMPLOYER PROFILE </nuxt-link>
                             </div>
                         </div>
                     </div>
@@ -219,19 +219,19 @@ onUnmounted(() => {
                     <div @mouseover="showDropdown('candidates')" @mouseleave="hideDropdown" class="h-full">
                         <p
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/candidate') || $route.path === '/candidates' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
-                            CANDIDATES <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
+                            CANDIDATE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
                         <div class="invisible-zone"></div>
                         <div v-if="activeDropdown === 'candidates'"
                             class="dropdown-menu w-[16rem] h-[10rem] mt-[0.5rem]">
                             <div class="absolute top-[18%] space-y-5">
-                                <nuxt-link to="/candidates" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/candidate/candidates" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     CANDIDATES </nuxt-link>
-                                <nuxt-link to="/candidateprofile" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/candidate/candidate-profile" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     CANDIDATES PROFILE </nuxt-link>
-                                <nuxt-link to="/candidatesetting" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/candidate/profile-setting" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     CANDIDATES SETTING </nuxt-link>
                             </div>
@@ -267,13 +267,13 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[10rem] p-4 ml-[1rem]">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/overview" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/helpcenter/overview" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">OVERVIEW</nuxt-link>
-                                                <nuxt-link to="/faqs" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/helpcenter/faqs" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FAQS</nuxt-link>
-                                                <nuxt-link to="/guides" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/helpcenter/guides" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">GUIDES</nuxt-link>
-                                                <nuxt-link to="/support" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/helpcenter/support" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SUPPORT</nuxt-link>
                                             </div>
                                         </div>
@@ -290,12 +290,12 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[10rem] p-4 ml-[1rem]">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/blogs" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/blog/blogs" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOGS</nuxt-link>
-                                                <nuxt-link to="/blogsidebar" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/blog/blog-sidebar" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOG
                                                     SIDEBAR</nuxt-link>
-                                                <nuxt-link to="/blogdetail" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/blog/blog-detail" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOG
                                                     DETAIL</nuxt-link>
                                             </div>
@@ -313,14 +313,14 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[12rem] ml-[1rem] p-4">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/Login" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/auth/Login" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN</nuxt-link>
-                                                <nuxt-link to="/Signup" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/auth/Signup" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP</nuxt-link>
-                                                <nuxt-link to="/forgotpass" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/auth/forgotpass" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FORGOT
                                                     PASSWORD</nuxt-link>
-                                                <nuxt-link to="/screenlock" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/auth/lockscreen" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOCK
                                                     SCREEN</nuxt-link>
                                             </div>
@@ -338,10 +338,10 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[12rem] ml-[1rem] p-4">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/utility1" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/utility/terms" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">TERM
                                                     OF SERVICES</nuxt-link>
-                                                <nuxt-link to="/utility2" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/utility/privacy" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">PRIVACY
                                                     POLICY</nuxt-link>
                                             </div>
@@ -359,10 +359,10 @@ onUnmounted(() => {
                                     <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[10rem] ml-[1rem] p-4">
                                             <div class="space-y-4">
-                                                <nuxt-link to="/coming-soon" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/special/comingsoon" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">COMMING
                                                     SOON</nuxt-link>
-                                                <nuxt-link to="/maintenance" active-class="text-[#0b63f3]"
+                                                <nuxt-link to="/special/maintenance" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">MAINTENANCE</nuxt-link>
                                             </div>
                                         </div>

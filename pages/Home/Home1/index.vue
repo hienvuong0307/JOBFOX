@@ -19,12 +19,18 @@
                         </span>
                     </div>
                     <div class="mt-8">
-                        <InputGroup class="rounded-2xl">
-                            <IconField iconPosition="left">
-                                <InputIcon class="pi pi-search"> </InputIcon>
-                                <InputText v-model="value" class="rounded-2xl" placeholder="Search" />
-                            </IconField>
-                            <Button label="Search" severity="info" />
+                        <InputGroup class="w-[546px] h-[50px] bg-white rounded-full flex items-center px-4">
+                            <div class="flex items-center gap-2 w-full">
+                                <InputIcon class="pi pi-search text-[21px] text-[black]" />
+                                <InputText v-model="searchValue"
+                                    class="w-full bg-transparent text-gray-500 text-[14px] focus:outline-none"
+                                    placeholder="Search jobs & candidates ..." />
+                            </div>
+                            <div class="absolute ml-[29.6rem]">
+                                <Button label="Search" severity="info"
+                                    class="ml-3 px-4 w-[105px] h-[46px] bg-[#3b82f6] rounded-full text-[white] text-[17px] "
+                                    @click="handleSearch" />
+                            </div>
                         </InputGroup>
                     </div>
                 </div>
@@ -52,7 +58,7 @@
             <div class="w-2/4 h-auto flex justify-center mt-10">
                 <div class="w-4/5 mt-5">
                     <h3 class="text-[28px] font-semibold">
-                          Millions of jobs.<br />
+                        Millions of jobs.<br />
                         Find the one that's right for you.
                     </h3>
                     <div class="mt-5 w-[120%]">
@@ -109,7 +115,7 @@
 </template>
 
 <script setup>
-import Blog from '~/components/Home/Home1/Blog.vue'; 
+import Blog from '~/components/Home/Home1/Blog.vue';
 import CompaniesJob from '~/components/Home/Home1/CompaniesJob.vue';
 import ExploreJob from '~/components/Home/Home1/ExploreJob.vue';
 import PopularCategories from '~/components/Home/Home1/PopularCategories.vue';

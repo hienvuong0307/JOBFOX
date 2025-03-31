@@ -2,76 +2,84 @@
     <div class="card w-4/5">
         <div class="grid grid-cols-3 gap-4">
             <div class="col-span-1 flex flex-col">
-                <div class="flex flex-col md:flex-row">
-                        <div class="sticky top-20 z-50 self-start block">
-                            <div class="w-full rounded-2xl bg-white shadow-md p-4">
-                                <div class="mt-5 space-y-5">
-                                    <div>
-                                        <div class="flex justify-between text-[15px] font-bold">Search Properties</div>
-                                        <IconField>
-                                            <InputText v-model="searchQuery" type="text" placeholder="Search..."
-                                                class="mt-2 w-[25rem] border border-gray-300 rounded-md bg-white px-3 py-2 text-gray-800 text-[15px] font-medium" />
-                                            <InputIcon class="pi pi-search" />
-                                        </IconField>
-                                    </div>
+                <div class="sticky top-[5rem] self-start">
+                    <div class="w-full rounded-2xl  bg-white shadow-[0_0_3px_#1e293b26] p-4">
+                        <div class="mt-5 space-y-5">
+                            <div>
+                                <div class="flex justify-between text-[15px] font-bold">Search Properties</div>
+                                <IconField>
+                                    <InputText
+                                        v-model="value3"
+                                        type="text"
+                                        size="large"
+                                        placeholder="Search..."
+                                        class="mt-2 w-[25rem]"
+                                        style="background-color: #fff; border: 1px solid #f1f5f9; border-radius: 6px; color: #1e293b; font-size: 15px; font-weight: 500; line-height: 26px"
+                                    />
+                                    <InputIcon class="pi pi-search" />
+                                </IconField>
+                            </div>
 
-                                    <div>
-                                        <div class="flex justify-between text-[15px] font-bold">Categories</div>
-                                        <select v-model="selectedCategory"
-                                            class="form-select mt-2 w-[25rem] h-[45px] border border-gray-300 rounded-md bg-white px-3 py-2 text-gray-800 text-[15px] font-medium">
-                                            <option v-for="(job, index) in jobOptions" :key="index" :value="job.value">
-                                                {{ job.label }}
-                                            </option>
-                                        </select>
-                                    </div>
+                            <div>
+                                <div class="flex justify-between text-[15px] font-bold">Categories</div>
+                                <select
+                                    style="background-color: #fff; border: 1px solid #f1f5f9; border-radius: 6px; color: #1e293b; font-size: 15px; font-weight: 500; line-height: 26px"
+                                    class="form-select form-control border mt-2 w-[25rem] h-[45px]"
+                                    aria-label="Default select example"
+                                >
+                                    <option v-for="(job, index) in jobOptions" :key="index" :value="job.value">
+                                        {{ job.label }}
+                                    </option>
+                                </select>
+                            </div>
 
-                                    <div>
-                                        <div class="flex justify-between text-[15px] font-bold">Location</div>
-                                        <select v-model="selectedLocation"
-                                            class="form-select mt-2 w-[25rem] h-[45px] border border-gray-300 rounded-md bg-white px-3 py-2 text-gray-800 text-[15px] font-medium">
-                                            <option v-for="(location, index) in jobLocation" :key="index"
-                                                :value="location.value">
-                                                {{ location.label }}
-                                            </option>
-                                        </select>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-[15px] font-bold">Job Types</div>
-                                        <div class="flex flex-col gap-4">
-                                            <div v-for="category in categories" :key="category.key"
-                                                class="flex items-center w-[22rem]">
-                                                <Checkbox v-model="selectedCategories" :inputId="category.key"
-                                                    name="category" :value="category.name" />
-                                                <label :for="category.key" class="ml-2 text-gray-700">{{ category.name
-                                                    }}</label>
-                                                <span
-                                                    class="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600">
-                                                    {{ category.count }}
-                                                </span>
+                            <div>
+                                <div class="flex justify-between text-[15px] font-bold">Location</div>
+                                <select
+                                    style="background-color: #fff; border: 1px solid #f1f5f9; border-radius: 6px; color: #1e293b; font-size: 15px; font-weight: 500; line-height: 26px"
+                                    class="form-select form-control border mt-2 w-[25rem] h-[45px]"
+                                    aria-label="Default select example"
+                                >
+                                    <option v-for="(job, index) in jobLocation" :key="index" :value="job.value">
+                                        {{ job.label }}
+                                    </option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between text-[15px] font-bold">Job Types</div>
+                                <div class="card flex justify-start ml-[-1rem] mt-[-1rem]">
+                                    <div class="flex flex-col gap-4">
+                                        <div v-for="category in categories" :key="category.key" class="flex items-center w-[22rem]">
+                                            <div class="flex items-center gap-2 flex-grow">
+                                                <Checkbox v-model="selectedCategories" :inputId="category.key" name="category" :value="category.name" />
+                                                <label :for="category.key">{{ category.name }}</label>
                                             </div>
+                                            <span class="bg-[#3b82f60d] text-[#3b82f6] text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full ml-auto">
+                                                {{ category.count }}
+                                            </span>
                                         </div>
                                     </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-[15px] font-bold">Salary</div>
-                                        <div class="flex flex-col gap-4">
-                                            <div v-for="salary in salaries" :key="salary.key"
-                                                class="flex items-center w-[22rem]">
-                                                <Checkbox v-model="selectedSalaries" :inputId="salary.key" name="salary"
-                                                    :value="salary.name" />
-                                                <label :for="salary.key" class="ml-2 text-gray-700">{{ salary.name
-                                                    }}</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <Button label="SEND MESSAGE"
-                                        class="w-full rounded-md bg-blue-500 py-3 text-white transition hover:bg-blue-600" />
                                 </div>
                             </div>
+
+
+                            <div>
+                                <div class="flex justify-between text-[15px] font-bold">Salary</div>
+                                <div class="card flex justify-start ml-[-1rem] mt-[-1rem]">
+                                    <div class="flex flex-col gap-4">
+                                        <div v-for="salary in salaries" :key="salary.key" class="flex items-center w-[22rem]">
+                                            <div class="flex items-center gap-2 flex-grow">
+                                                <Checkbox v-model="selectedCategories" :inputId="salary.key" name="salary" :value="salary.name" />
+                                                <label :for="salary.key">{{ salary.name }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <Button label="SEND MESSAGE" class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition" style="background-color: #0b63f3; border-color: #0b63f3; color: #fff" />
                         </div>
-                 
+                    </div>
                 </div>
             </div>
 
@@ -89,31 +97,22 @@
                                     </template>
                                     <template #subtitle>
                                         <div class="">
-                                            <span class="text-[15px] opacity-75"><i class="pi pi-clock"
-                                                    style="color: #3b82f6"></i> {{ item.desc }}</span>
+                                            <span class="text-[15px] opacity-75"><i class="pi pi-clock" style="color: #3b82f6"></i> {{ item.desc }}</span>
                                         </div>
                                     </template>
                                     <template #footer>
                                         <div class="flex gap-3 m-2">
-                                            <Tag style="background-color: #3b82f60d; color: #3b82f6"
-                                                :value="item.type" />
-                                            <span class="text-[14px] opacity-75 ml-[10rem]"><i class="pi pi-dollar"
-                                                    style="color: #3b82f6"></i> {{ item.salarytwo }}/mo</span>
+                                            <Tag style="background-color: #3b82f60d; color: #3b82f6" :value="item.type" />
+                                            <span class="text-[14px] opacity-75 ml-[10rem]"><i class="pi pi-dollar" style="color: #3b82f6"></i> {{ item.salarytwo }}/mo</span>
                                         </div>
                                         <div class="w-full h-[1px] bg-slate-100 mt-5"></div>
                                         <div class="flex items-center mb-5">
-                                            <div class="w-15 h-15 border-slate-100 border-solid rounded-lg mt-12"
-                                                style="box-shadow: 0 0 3px #1e293b26; border-radius: 6px">
-                                                <img :src="item.image" alt=""
-                                                    class="!w-14 !h-14 bg-white m-1 rounded-lg"
-                                                    style="height: 65px; width: 65px" />
+                                            <div class="w-15 h-15 border-slate-100 border-solid rounded-lg mt-12" style="box-shadow: 0 0 3px #1e293b26; border-radius: 6px">
+                                                <img :src="item.image" alt="" class="!w-14 !h-14 bg-white m-1 rounded-lg" style="height: 65px; width: 65px" />
                                             </div>
                                             <div class="grid mt-[2rem] ml-[1rem]">
                                                 <div class="text-xl font-medium flex mt-[1rem]">{{ item.name }}</div>
-                                                <div
-                                                    class="text-[15px] text-[#94a3b8] font-medium flex mt-[0.4rem] gap-2">
-                                                    <i class="pi pi-map-marker mt-[0.3rem]"
-                                                        style="color: #94a3b8"></i>{{ item.country }}</div>
+                                                <div class="text-[15px] text-[#94a3b8] font-medium flex mt-[0.4rem] gap-2"><i class="pi pi-map-marker mt-[0.3rem]" style="color: #94a3b8"></i>{{ item.country }}</div>
                                             </div>
                                         </div>
                                     </template>
@@ -303,4 +302,5 @@ const JobData = ref([
 ]);
 </script>
 
-<style></style>
+<style>
+</style>

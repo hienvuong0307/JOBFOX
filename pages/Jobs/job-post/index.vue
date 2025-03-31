@@ -13,7 +13,7 @@
                 <img style="height: 300px; width: 4000px" src="@/assets/SVG/banner10.svg" alt="Banner" />
             </div>
 
-            <div class="absolute top-[27%] left-1/2 transform -translate-x-1/2 text-center">
+            <div class="absolute top-[24%] left-1/2 transform -translate-x-1/2 text-center">
                 <Breadcrumb style="background-color: transparent" :model="items" />
             </div>
         </div>
