@@ -16,38 +16,35 @@
 
             <div class="relative w-full flex justify-center mt-8">
                 <div class="w-[70%] bg-white shadow-lg rounded-lg p-6">
-                    <div class="w-full flex">
-                        <InputGroup class="w-3/4 flex">
-                            <IconField iconPosition="left" class="w-1/3">
-                                <InputIcon class="pi pi-search"></InputIcon>
-                                <InputText class="w-full h-16" v-model="value1" placeholder="Search" />
-                            </IconField>
-
-                            <IconField iconPosition="right" @mousedown="toggle" class="w-1/3" aria-haspopup="true" aria-controls="overlay_menu">
-                                <InputIcon class="pi pi-map-marker"></InputIcon>
-                                <InputText class="w-full h-16" v-model="selectCountry" placeholder="Location" />
-                                <InputIcon class="pi pi-chevron-down"></InputIcon>
-                            </IconField>
-                            <Menu ref="menu" id="overlay_menu" :popup="true">
-                                <template #start>
-                                    <Listbox v-model="selectCountry" @click="toggle" :options="country" class="w-full md:w-14rem" />
-                                </template>
-                            </Menu>
-
-                            <IconField iconPosition="right" @mousedown="toggle2" class="w-1/3" aria-haspopup="true" aria-controls="overlay_menu2">
-                                <InputIcon class="pi pi-briefcase"></InputIcon>
-                                <InputText class="w-full h-16" v-model="selectJobType" placeholder="Job Type" />
-                                <InputIcon class="pi pi-chevron-down"></InputIcon>
-                            </IconField>
-                            <Menu ref="menu2" id="overlay_menu2" :popup="true">
-                                <template #start>
-                                    <Listbox v-model="selectJobType" @click="toggle2" :options="jobType" class="w-full md:w-14rem" />
-                                </template>
-                            </Menu>
-                        </InputGroup>
-
-                        <Button label="SEARCH" class="w-1/4 h-16 bg-[#0b63f3] text-white font-semibold rounded-lg ml-2" style="background-color: #3b82f6" />
-                    </div>
+                       <div class="w-full flex">
+                    <InputGroup class="!w-3/4">
+                        <IconField iconPosition="left" class="!w-1/3">
+                            <InputIcon class="pi pi-search"></InputIcon>
+                            <InputText class="w-full !h-16 ml-9" v-model="value1" placeholder="Search" />
+                        </IconField>
+                        <IconField iconPosition="right" @mousedown="toggle" class="!w-1/3" aria-haspopup="true" aria-controls="overlay_menu">
+                            <InputIcon class="pi pi-map-marker"></InputIcon>
+                            <InputText class="w-full !h-16 ml-7" v-model="selectCountry" placeholder="Search" />
+                            <InputIcon class="pi pi-chevron-down"></InputIcon>
+                        </IconField>
+                        <Menu ref="menu" id="overlay_menu" :popup="true">
+                            <template #start>
+                                <Listbox v-model="selectCountry" @click="toggle" :options="country" class="w-full md:w-14rem" :pt="{ root: { style: { border: 'none', 'box-shadow': 'none' } } }" />
+                            </template>
+                        </Menu>
+                        <IconField iconPosition="right" @mousedown="toggle2" class="!w-1/3" aria-haspopup="true" aria-controls="overlay_menu2">
+                            <InputIcon class="pi pi-briefcase"></InputIcon>
+                            <InputText class="w-full !h-16 ml-9" v-model="selectJobType" placeholder="Search" />
+                            <InputIcon class="pi pi-chevron-down"></InputIcon>
+                        </IconField>
+                        <Menu ref="menu2" id="overlay_menu2" :popup="true">
+                            <template #start>
+                                <Listbox v-model="selectJobType" @click="toggle2" :options="jobType" class="w-full md:w-14rem" :pt="{ root: { style: { border: 'none', 'box-shadow': 'none' } } }" />
+                            </template>
+                        </Menu>
+                    </InputGroup>
+                    <Button label="SEARCH" class="!w-1/4 !h-16 bg-[#0b63f3] text-[white] text-[15px]" severity="info" />
+                </div>
                 </div>
             </div>
             <div class="w-4/5 text-center flex justify-center">

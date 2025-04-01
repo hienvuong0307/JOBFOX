@@ -25,8 +25,8 @@
                                     
                                     <template #footer>
                                         <div class="flex gap-3 m-2 mb-1">
-                                            <p class="text-xl opacity-75"><i class="pi pi-map-marker mr-1" style="color: #94a3b8 "></i> {{ item.country }}</p>
-                                            <div class="ml-[6rem]"><p class="text-xl text-[#3b82f6]">40 Jobs</p></div>                                        
+                                            <p class="text-[15px] opacity-75 absolute"><i class="pi pi-map-marker mr-1" style="color: #94a3b8 "></i> {{ item.country }}</p>
+                                            <div class="ml-[11rem]"><p class="text-xl text-[#3b82f6]">40 Jobs</p></div>                                        
                                         </div>
                                     </template>
                                 </Card>

@@ -4,7 +4,7 @@
             <template #list="slotProps">
                 <div class="grid grid-cols-3 gap-4">
                     <div v-for="(item, index) in slotProps.items" :key="index" class="">
-                        <Card style="overflow: hidden; box-shadow: 0 0 3px  #1e293b26; border: 2rem;">
+                        <Card style="overflow: hidden; box-shadow: 0 0 3px  #1e293b26; border: 1rem">
                             <template #header>
                                 <div class="flex items-center flex-1 m-5"></div>
                             </template>
@@ -15,13 +15,13 @@
                                 <div class="">
                                     <span class="text-[15px] opacity-75"><i class="pi pi-clock" style="color: #3b82f6"></i> {{ item.desc }}</span>
                                 </div>
-                            </template>
-                            <template #footer>
-                                <div class="flex gap-3 m-2">
+                                <div class="flex gap-3 absolute mt-[1rem]">
                                     <Tag style="background-color: #3b82f60d; color: #3b82f6" :value="item.type" />
                                     <span class="text-[14px] opacity-75 ml-[10rem]"><i class="pi pi-dollar" style="color: #3b82f6"></i> {{ item.salarytwo }}/mo</span>
                                 </div>
-                                <div class="w-full h-[1px] bg-slate-100 mt-5"></div>
+                            </template>
+                            <template #footer>
+                                <div class="w-full h-[1px] bg-slate-100"></div>
                                 <div class="flex items-center mb-5">
                                     <div class="w-15 h-15 border-slate-100 border-solid rounded-lg mt-12" style="box-shadow: 0 0 3px #1e293b26; border-radius: 6px">
                                         <img :src="item.image" alt="" class="!w-14 !h-14 bg-white m-1 rounded-lg" style="height: 65px; width: 65px;" />

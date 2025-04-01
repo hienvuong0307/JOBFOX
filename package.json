@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/content": "^3.4.0",
     "@tailwindcss/vite": "^4.0.15",
+    "axios": "^1.8.4",
     "nuxt": "^3.16.1",
     "primeicons": "^7.0.0",
     "primevue": "^3.53.1",

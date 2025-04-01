@@ -43,10 +43,10 @@
                 </div>
             </InputGroup>
             <div class="ml-16">
-                <Button
-                    label="FOLLOW"
-                    class="!w-50 !h-12 text-white mr-2"
-                    style="background-color: #3b82f6 !important; border: 1px solid #3b82f6 !important; font-size: 12px; box-shadow: 0 3px 5px 0 #3b82f61a; color: #fff"
+                <Button 
+                    label="FOLLOW" 
+                    class="!w-79 !h-12 text-white mr-2" 
+                    style="background-color: #3b82f6; border: 1px solid #3b82f60d; box-shadow: 0 3px 5px 0 #3b82f61a; color: white; font-size: 12px; padding: 7px 16px"
                 />
                 <Button 
                     label="SEE JOBS" 

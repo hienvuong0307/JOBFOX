@@ -16,11 +16,11 @@
                     <InputGroup class="!w-3/4">
                         <IconField iconPosition="left" class="!w-1/3">
                             <InputIcon class="pi pi-search"></InputIcon>
-                            <InputText class="w-full !h-16" v-model="value1" placeholder="Search" />
+                            <InputText class="w-full !h-16 ml-9" v-model="value1" placeholder="Search" />
                         </IconField>
                         <IconField iconPosition="right" @mousedown="toggle" class="!w-1/3" aria-haspopup="true" aria-controls="overlay_menu">
                             <InputIcon class="pi pi-map-marker"></InputIcon>
-                            <InputText class="w-full !h-16" v-model="selectCountry" placeholder="Search" />
+                            <InputText class="w-full !h-16 ml-7" v-model="selectCountry" placeholder="Search" />
                             <InputIcon class="pi pi-chevron-down"></InputIcon>
                         </IconField>
                         <Menu ref="menu" id="overlay_menu" :popup="true">
@@ -30,7 +30,7 @@
                         </Menu>
                         <IconField iconPosition="right" @mousedown="toggle2" class="!w-1/3" aria-haspopup="true" aria-controls="overlay_menu2">
                             <InputIcon class="pi pi-briefcase"></InputIcon>
-                            <InputText class="w-full !h-16" v-model="selectJobType" placeholder="Search" />
+                            <InputText class="w-full !h-16 ml-9" v-model="selectJobType" placeholder="Search" />
                             <InputIcon class="pi pi-chevron-down"></InputIcon>
                         </IconField>
                         <Menu ref="menu2" id="overlay_menu2" :popup="true">
@@ -39,7 +39,7 @@
                             </template>
                         </Menu>
                     </InputGroup>
-                    <Button label="SEARCH" class="!w-1/4 !h-16" severity="info" />
+                    <Button label="SEARCH" class="!w-1/4 !h-16 bg-[#0b63f3] text-[white] text-[15px]" severity="info" />
                 </div>
             </div>
 

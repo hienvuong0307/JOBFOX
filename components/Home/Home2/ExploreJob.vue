@@ -20,8 +20,8 @@
                                     </div>
 
                                     <div class="flex flex-col flex-1">
-                                        <Tag class="text-[16px] bg-blue-100 text-blue-600 p-1 rounded w-[5rem]" :value="item.type" style="background-color: #3b82f60d; color: #3b82f6" />
-                                        <span class="text-[16px] opacity-75"><i class="pi pi-clock opacity-75"></i> {{ item.desc }}</span>
+                                        <Tag class="text-[13px] bg-blue-100 text-blue-600 p-1 rounded w-[5rem]" :value="item.type" style="background-color: #3b82f60d; color: #3b82f6" />
+                                        <span class="text-[14px] opacity-75"><i class="pi pi-clock opacity-75" style="font-size: 120.p                        x;"></i> {{ item.desc }}</span>
                                     </div>
 
                                     <div class="flex flex-col flex-1">

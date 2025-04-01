@@ -39,7 +39,7 @@
                             </template>
                         </Menu>
                     </InputGroup>
-                    <Button label="SEARCH" class="!w-1/4 !h-16" severity="info" />
+                    <Button label="SEARCH" class="!w-1/4 !h-16 bg-[#0b63f3] text-[white] text-[15px]" severity="info" />
                 </div>
             </div>
 
