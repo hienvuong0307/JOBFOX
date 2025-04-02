@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-<script setup>
-definePageMeta({
-  redirect: '/home/home1'
-})
-</script>
-=======
+
 <template>
     <div class="bg-[#3b82f6] w-full h-[800px] flex justify-center ">
         <div class=" flex w-4/5 gap-6 mt-3 ">
@@ -136,4 +130,3 @@ const router = useRouter();
 </script>
 
 <style></style>
->>>>>>> bd8335809715e4aad5767e019b657a1e37acf0df
