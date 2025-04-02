@@ -102,7 +102,7 @@
                                             </div>
 
                                             <div class="flex flex-col flex-1">
-                                                <Tag class="text-[16px] bg-blue-100 text-blue-600 p-1 rounded w-[5rem]"
+                                                <Tag class="text-[14px] bg-blue-100 text-blue-600 p-1 rounded w-[5rem]"
                                                     :value="item.type"
                                                     style="background-color: #3b82f60d; color: #3b82f6" />
                                                 <span class="text-[13px] opacity-75"><i

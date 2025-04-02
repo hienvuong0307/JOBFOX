@@ -6,7 +6,7 @@
                   <Card style=" overflow: hidden">
                       <template #header>
                         <div class="flex justify-center mt-6">
-                            <Button style="color:#3b82f6; background-color: #3b82f60d;" :icon="`pi ${slot.icon}`" class="text-4xl !w-14"  text raised ></Button>
+                            <Button style="color:#3b82f6; background-color: #3b82f60d;" :icon="`pi ${slot.icon}`" class="text-4xl !w-[49px] !h-[49px]"  text raised ></Button>
                         </div>
                       </template>
                       <template #title><h1 class="text-xl font-bold text-center pt-6">{{ slot.title }}</h1></template>
