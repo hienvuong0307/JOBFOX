@@ -25,7 +25,9 @@
 
         <div class="flex justify-between text-gray-500 text-sm mt-4">
           <span>Remember Me</span>
-          <span class="cursor-pointer hover:underline">Forgot password?</span>
+          <nuxt-link to="/auth/forgotpass" class="cursor-pointer hover:underline">
+            Forgot password?
+                </nuxt-link>
         </div>
         <div class="mt-6">
           <button @click="handleLogin" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 w-full rounded">
