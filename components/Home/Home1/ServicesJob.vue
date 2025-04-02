@@ -7,11 +7,15 @@
                     on over 30000+ companies worldwide.</p>
             </div>
             <div class="grid grid-cols-4 gap-10 mt-10">
-                <div v-for="slot in jobFeatures":key="slot" class="">
+                <div v-for="slot in jobFeatures" :key="slot" class="">
                   <Card style=" overflow: hidden">
                       <template #header>
                         <div class="flex justify-center mt-6">
+<<<<<<< HEAD
                             <Button :icon="`pi ${slot.icon}`" style="color:#3b82f6; background-color: #3b82f60d;" class="text-4xl !w-[49px] !h-[49px]"  text raised ></Button>
+=======
+                            <Button :icon="`pi ${slot.icon}`" style="color:#3b82f6; background-color: #3b82f60d;" class="text-4xl !w-14 !h-14"  text raised ></Button>
+>>>>>>> bd8335809715e4aad5767e019b657a1e37acf0df
                         </div>
                       </template>
                       <template #title><h1 class="text-xl font-bold text-center pt-6">{{ slot.title }}</h1></template>

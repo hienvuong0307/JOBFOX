@@ -73,16 +73,16 @@ onUnmounted(() => {
             </div>
 
             <div class="flex items-center space-x-9 ml-[29rem]">
-                <div class="dropdown-container">
-                    <div @mouseover="showDropdown('home')" @mouseleave="hideDropdown" class="h-full">
+                <div class="dropdown-container relative group">
+                    <div class="h-full">
                         <p to="/"
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/home') || $route.path === '/' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             HOME <i class="pi pi-sort-down-fill" style="font-size: 45%"></i>
                         </p>
-                        <div class="invisible-zone"></div>
-                        <div v-if="activeDropdown === 'home'" class="dropdown-menu w-[12rem] h-[9.5rem] mt-[0.5rem]">
-                            <div class="absolute top-[15%] space-y-5">
-                                <nuxt-link to="/home/home1" active-class="text-[#0b63f3]"
+                        <!-- <div class="invisible-zone"></div> -->
+                        <div class="absolute hidden group-hover:block w-48">
+                            <div class="flex flex-col gap-4 card rounded-md mt-5">
+                                <nuxt-link to="/" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> HERO ONE
                                 </nuxt-link>
                                 <nuxt-link to="/home/home2" active-class="text-[#0b63f3]"
@@ -96,26 +96,26 @@ onUnmounted(() => {
                     </div>
                 </div>
 
-                <div class="dropdown-container">
-                    <div @mouseover="showDropdown('jobs')" @mouseleave="hideDropdown" class="h-full">
+                <div class="relative group/j">
+                    <div class="h-full">
                         <p to="/"
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/job') || $route.path === '/jobs' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             JOBS <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
-                        <div class="invisible-zone"></div>
-                        <div v-if="activeDropdown === 'jobs'" class="dropdown-menu w-[14rem] h-[20rem] mt-[0.5rem]">
-                            <div class="absolute top-[9%] space-y-5">
-                                <nuxt-link to="/jobs/job-categories" active-class="text-[#0b63f3]"
+                        <div class="absolute hidden group-hover/j:block w-[14rem] h-[20rem] ">
+                            <div class="flex flex-col gap-4 mt-5 card rounded-md">
+                                <div>
+                                    <nuxt-link to="/jobs/job-categories" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
                                     CATEGORIES</nuxt-link>
+                                </div>
                                 <div class="relative group">
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/jobgrid') || $route.path === '/jobgrids' ? 'text-[#0b63f3]' : '']">
                                         JOB GRIDS
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.77rem] hidden group-hover:block">
+                                    <div class="absolute hidden left-3/4 translate-x-1/3 top-0 group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
                                             <div class="space-y-4">
                                                 <nuxt-link to="/jobs/job-grid-one" active-class="text-[#0b63f3]"
@@ -139,10 +139,10 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
                                         JOB LIST
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
+                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
+                                    <div class="absolute left-3/4 translate-x-1/3 top-0 hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
                                             <div class="space-y-4">
                                                 <nuxt-link to="/jobs/job-list-one" active-class="text-[#0b63f3]"
@@ -160,10 +160,10 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/jobdetail') || $route.path === '/jobdetails' ? 'text-[#0b63f3]' : '']">
                                         JOB DETAIL
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.5rem] hidden group-hover:block">
+                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
+                                    <div class="absolute left-3/4 translate-x-1/3 top-0 hidden group-hover:block">
                                         <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
                                             <div class="space-y-4">
                                                 <nuxt-link to="/jobs/job-detail-one" active-class="text-[#0b63f3]"
@@ -180,29 +180,34 @@ onUnmounted(() => {
                                     </div>
                                 </div>
 
-                                <nuxt-link to="/jobs/job-apply" active-class="text-[#0b63f3]"
+                                <div>
+                                    <nuxt-link to="/jobs/job-apply" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
                                     APPLY</nuxt-link>
-                                <nuxt-link to="/jobs/job-post" active-class="text-[#0b63f3]"
+                                </div>
+                                <div>
+                                    <nuxt-link to="/jobs/job-post" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
                                     POST</nuxt-link>
-                                <nuxt-link to="/jobs/career" active-class="text-[#0b63f3]"
+                                </div>
+                                <div>
+                                    <nuxt-link to="/jobs/career" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">CAREER</nuxt-link>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- EMPLOYERS dropdown -->
-                <div class="dropdown-container">
-                    <div @mouseover="showDropdown('employers')" @mouseleave="hideDropdown" class="h-full">
+                <div class="dropdown-container relative group/e">
+                    <div class="h-full">
                         <p
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/employer') || $route.path === '/employers' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             EMPLOYERS <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
-                        <div class="invisible-zone"></div>
-                        <div v-if="activeDropdown === 'employers'" class="dropdown-menu w-[16rem] h-[7rem] mt-[0.5rem]">
-                            <div class="absolute top-[19%] space-y-5">
+                        <div class="absolute hidden group-hover/e:block w-[16rem] ">
+                            <div class="card flex flex-col gap-3 rounded-md mt-5">
                                 <nuxt-link to="/employers/employers" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     EMPLOYERS </nuxt-link>
@@ -215,16 +220,16 @@ onUnmounted(() => {
                 </div>
 
                 <!-- CANDIDATES dropdown -->
-                <div class="dropdown-container">
-                    <div @mouseover="showDropdown('candidates')" @mouseleave="hideDropdown" class="h-full">
+                <div class="dropdown-container relative group/c">
+                    <div class="h-full">
                         <p
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/candidate') || $route.path === '/candidates' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             CANDIDATE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
-                        <div class="invisible-zone"></div>
-                        <div v-if="activeDropdown === 'candidates'"
-                            class="dropdown-menu w-[16rem] h-[10rem] mt-[0.5rem]">
-                            <div class="absolute top-[18%] space-y-5">
+                        <!-- <div class="invisible-zone"></div> -->
+                        <div
+                            class="absolute hidden group-hover/c:block w-[16rem] h-[10rem]">
+                            <div class="flex flex-col gap-3 mt-5 card rounded-md">
                                 <nuxt-link to="/candidate/candidates" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     CANDIDATES </nuxt-link>
@@ -240,15 +245,15 @@ onUnmounted(() => {
                 </div>
 
                 <!-- PAGE dropdown -->
-                <div class="dropdown-container">
-                    <div @mouseover="showDropdown('page')" @mouseleave="hideDropdown" class="h-full">
+                <div class="relative group/p">
+                    <div class="h-full">
                         <p
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/page') || $route.path === '/pages' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             PAGE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
-                        <div class="invisible-zone"></div>
-                        <div v-if="activeDropdown === 'page'" class="dropdown-menu w-[16rem] h-[23rem] mt-[0.5rem]">
-                            <div class="absolute top-[7%] space-y-5">
+                        <!-- <div class="invisible-zone"></div> -->
+                        <div class=" w-[16rem] absolute hidden group-hover/p:block">
+                            <div class="flex card flex-col gap-3 mt-5 rounded-md">
                                 <nuxt-link to="/aboutus" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> ABOUT US
                                 </nuxt-link>
@@ -261,21 +266,18 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
                                         HELPCENTER
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[10rem] p-4 ml-[1rem]">
-                                            <div class="space-y-4">
-                                                <nuxt-link to="/helpcenter/overview" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">OVERVIEW</nuxt-link>
-                                                <nuxt-link to="/helpcenter/faqs" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FAQS</nuxt-link>
-                                                <nuxt-link to="/helpcenter/guides" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">GUIDES</nuxt-link>
-                                                <nuxt-link to="/helpcenter/support" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SUPPORT</nuxt-link>
-                                            </div>
+                                    <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
+                                        <div class="flex flex-col card rounded-md gap-3">
+                                            <nuxt-link to="/helpcenter/overview" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">OVERVIEW</nuxt-link>
+                                            <nuxt-link to="/helpcenter/faqs" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FAQS</nuxt-link>
+                                            <nuxt-link to="/helpcenter/guides" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">GUIDES</nuxt-link>
+                                            <nuxt-link to="/helpcenter/support" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SUPPORT</nuxt-link>
                                         </div>
                                     </div>
                                 </div>
@@ -284,21 +286,18 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
                                         BLOG
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[10rem] p-4 ml-[1rem]">
-                                            <div class="space-y-4">
-                                                <nuxt-link to="/blog/blogs" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOGS</nuxt-link>
-                                                <nuxt-link to="/blog/blog-sidebar" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOG
-                                                    SIDEBAR</nuxt-link>
-                                                <nuxt-link to="/blog/blog-detail" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOG
-                                                    DETAIL</nuxt-link>
-                                            </div>
+                                    <div class="absolute left-full translate-x-[29%] top-0 hidden group-hover:block"> 
+                                        <div class="flex flex-col card rounded-md gap-3">
+                                            <nuxt-link to="/blog/blogs" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOGS</nuxt-link>
+                                            <nuxt-link to="/blog/blog-sidebar" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOG
+                                                SIDEBAR</nuxt-link>
+                                            <nuxt-link to="/blog/blog-detail" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOG
+                                                DETAIL</nuxt-link>
                                         </div>
                                     </div>
                                 </div>
@@ -307,24 +306,24 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
                                         AUTH PAGES
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[12rem] ml-[1rem] p-4">
-                                            <div class="space-y-4">
-                                                <nuxt-link to="/auth/Login" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN</nuxt-link>
-                                                <nuxt-link to="/auth/Signup" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP</nuxt-link>
-                                                <nuxt-link to="/auth/forgotpass" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FORGOT
-                                                    PASSWORD</nuxt-link>
-                                                <nuxt-link to="/auth/lockscreen" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOCK
-                                                    SCREEN</nuxt-link>
-                                            </div>
+                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
+                                    <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
+                                       
+                                        <div class="flex flex-col card rounded-md gap-3">
+                                            <nuxt-link to="/auth/Login" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN</nuxt-link>
+                                            <nuxt-link to="/auth/Signup" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP</nuxt-link>
+                                            <nuxt-link to="/auth/forgotpass" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FORGOT
+                                                PASSWORD</nuxt-link>
+                                            <nuxt-link to="/auth/lockscreen" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOCK
+                                                SCREEN</nuxt-link>
                                         </div>
+                                    
                                     </div>
                                 </div>
 
@@ -332,20 +331,20 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
                                         UTILITY
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[12rem] ml-[1rem] p-4">
-                                            <div class="space-y-4">
-                                                <nuxt-link to="/utility/terms" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">TERM
-                                                    OF SERVICES</nuxt-link>
-                                                <nuxt-link to="/utility/privacy" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">PRIVACY
-                                                    POLICY</nuxt-link>
-                                            </div>
+                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
+                                    <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
+                                        
+                                        <div class="flex flex-col card rounded-md gap-3">
+                                            <nuxt-link to="/utility/terms" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">TERM
+                                                OF SERVICES</nuxt-link>
+                                            <nuxt-link to="/utility/privacy" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">PRIVACY
+                                                POLICY</nuxt-link>
                                         </div>
+                                      
                                     </div>
                                 </div>
 
@@ -353,20 +352,20 @@ onUnmounted(() => {
                                     <p to="/"
                                         :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
                                         SPECIAL
-                                        <span class="pi pi-chevron-right ml-[6rem]" style="font-size: 55%"></span>
+                                        <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute top-0 left-full w-[5.5rem] h-full"></div>
-                                    <div class="absolute left-full top-0 ml-[1.66rem] hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[10rem] ml-[1rem] p-4">
-                                            <div class="space-y-4">
-                                                <nuxt-link to="/special/comingsoon" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">COMMING
-                                                    SOON</nuxt-link>
-                                                <nuxt-link to="/special/maintenance" active-class="text-[#0b63f3]"
-                                                    class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">MAINTENANCE</nuxt-link>
-                                            </div>
+                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
+                                    <div class="absolute left-3/4 translate-x-1/2 top-0 hidden group-hover:block">
+                                      
+                                        <div class="flex flex-col card rounded-md gap-3">
+                                            <nuxt-link to="/special/comingsoon" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">COMMING
+                                                SOON</nuxt-link>
+                                            <nuxt-link to="/special/maintenance" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">MAINTENANCE</nuxt-link>
                                         </div>
                                     </div>
+                               
                                 </div>
                             </div>
                         </div>
@@ -374,8 +373,8 @@ onUnmounted(() => {
                 </div>
 
                 <!-- CONTACT US -->
-                <div class="dropdown-container">
-                    <div @mouseover="showDropdown('contact')" @mouseleave="hideDropdown" class="h-full">
+                <div class="dropdown-container relative group">
+                    <div class="h-full">
                         <nuxt-link to="/contactus"
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path === '/contactus' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             CONTACT US
@@ -393,7 +392,7 @@ onUnmounted(() => {
                         style="border-color: #0b63f3; background-image: url('https://jobnova-shreethemes.vercel.app/static/media/01.6ac85de7298319b1f8d5.jpg'); width: 2.5rem; height: 2.5rem; background-size: cover; background-position: center"></button>
 
                     <div v-if="showProfileMenu" ref="profileRef"
-                        class="dropdown-menu absolute right-4 mt-3 w-48 bg-white rounded-sm shadow-lg border border-gray-200"
+                        class=" absolute right-4 mt-3 w-48 bg-white rounded-sm shadow-lg border border-gray-200"
                         style="top: 4rem; z-index: 1000; width: 160px; height: 160px">
                         <div class="absolute top-[6px] mr-[1rem]">
                             <a href="/blog-sidebar/candidate-profile"
@@ -470,56 +469,6 @@ onUnmounted(() => {
     margin-left: 1rem;
 }
 
-.dropdown-menu {
-    position: absolute;
-    background-color: white;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-top: 3rem;
-    padding-right: 5rem;
-    padding-left: 1rem;
-    padding-bottom: 3rem;
-    z-index: 1000;
-    border-radius: 1rem;
-    text-align: left;
-}
-
-.dropdown-menu a {
-    transition: all 0.3s ease;
-}
-
-.dropdown-container {
-    position: relative;
-}
-
-.invisible-zone {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: transparent;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: calc(100% + 20px);
-    background-color: white;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-top: 3rem;
-    padding-right: 5rem;
-    padding-left: 1rem;
-    padding-bottom: 3rem;
-    z-index: 1000;
-    border-radius: 1rem;
-    text-align: left;
-}
-
-.dropdown-menu {
-    transition: opacity 0.2s ease;
-}
-
 .router-link-active {
     color: #0b63f3;
 }
@@ -560,9 +509,5 @@ onUnmounted(() => {
 
 .absolute.left-full {
     z-index: 1001;
-}
-
-.dropdown-container>div {
-    transition: color 0.3s ease;
 }
 </style>
