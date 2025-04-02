@@ -9,16 +9,6 @@ const activeDropdown = ref(null)
 const showSearch = ref(false)
 const scrollY = ref(0)
 
-
-
-const showDropdown = (menu) => {
-    activeDropdown.value = menu;
-};
-
-const hideDropdown = () => {
-    activeDropdown.value = null;
-};
-
 const toggleSearch = () => {
     showSearch.value = !showSearch.value;
 };
@@ -111,7 +101,7 @@ onUnmounted(() => {
                                 </div>
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/jobgrid') || $route.path === '/jobgrids' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/job-grid') || $route.path === '/job-grids' ? 'text-[#0b63f3]' : '']">
                                         JOB GRIDS
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -137,7 +127,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/job-list') || $route.path === '/job-lists' ? 'text-[#0b63f3]' : '']">
                                         JOB LIST
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -158,7 +148,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/jobdetail') || $route.path === '/jobdetails' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/job-detail') || $route.path === '/job-details' ? 'text-[#0b63f3]' : '']">
                                         JOB DETAIL
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -248,7 +238,7 @@ onUnmounted(() => {
                 <div class="relative group/p">
                     <div class="h-full">
                         <p
-                            :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/page') || $route.path === '/pages' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
+                            :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/page') || $route.path.includes('/helpcenter') || $route.path.includes('/blog')? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             PAGE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
                         <!-- <div class="invisible-zone"></div> -->
@@ -264,7 +254,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/helpcenter') || $route.path === '/helpcenter'|| $route.path.includes('/auth') ? 'text-[#0b63f3]' : '']">
                                         HELPCENTER
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -284,7 +274,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/blog') || $route.path === '/blog' ? 'text-[#0b63f3]' : '']">
                                         BLOG
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -304,7 +294,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/auth') || $route.path === '/auth' ? 'text-[#0b63f3]' : '']">
                                         AUTH PAGES
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -329,7 +319,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/utility') || $route.path === '/utility' ? 'text-[#0b63f3]' : '']">
                                         UTILITY
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
@@ -350,7 +340,7 @@ onUnmounted(() => {
 
                                 <div class="relative group">
                                     <p to="/"
-                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/joblist') || $route.path === '/joblists' ? 'text-[#0b63f3]' : '']">
+                                        :class="['text-[12.5px] font-semibold flex items-center justify-between hover:text-[#0b63f3]', $route.path.includes('/special') || $route.path === '/specials' ? 'text-[#0b63f3]' : '']">
                                         SPECIAL
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
