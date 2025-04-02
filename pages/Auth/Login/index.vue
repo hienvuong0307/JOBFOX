@@ -42,7 +42,7 @@
 
                 <div class="flex justify-center mt-4 text-sm text-gray-500">
                     <span>Don't have an account?</span>
-                    <span class="ml-2 font-semibold cursor-pointer text-blue-500 hover:underline">Sign Up</span>
+                    <span class="ml-2 font-semibold cursor-pointer text-blue-500 hover:underline"> <NuxtLink  to="/auth/signup"> Sign up</NuxtLink></span>
                 </div>
             </div>
         </div>

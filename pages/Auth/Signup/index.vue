@@ -43,7 +43,7 @@
                 </div>
                 <div class="flex justify-center mt-4">
                     <span class="text-[1rem] text-[#94a3b8]">Already have an account ?</span>
-                    <span class="ml-2 font-semibold"> Sign Up</span>
+                    <span class="ml-2 font-semibold cursor-pointer">  <NuxtLink  to="/auth/login"> Sign In</NuxtLink></span>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="w-1/3 flex items-center">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-16">
             <div v-for="x in img" :key="x" class="">
                 <Card style=" overflow: visible" class="h-[67px] w-[200px] bg-[#f8f9fc] ">
                     <template #content>

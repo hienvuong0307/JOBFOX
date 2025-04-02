@@ -112,6 +112,7 @@
     <div class="flex justify-center">
         <Blog></Blog>
     </div>
+
 </template>
 
 <script setup>
@@ -120,6 +121,11 @@ import CompaniesJob from '~/components/Home/Home1/CompaniesJob.vue';
 import ExploreJob from '~/components/Home/Home1/ExploreJob.vue';
 import PopularCategories from '~/components/Home/Home1/PopularCategories.vue';
 import ServiceJob from '~/components/Home/Home1/ServicesJob.vue';
+import { useRouter } from 'vue-router';
+import {ref} from 'vue';
+const router = useRouter();
+
+
 </script>
 
 <style></style>
