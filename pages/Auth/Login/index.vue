@@ -82,7 +82,7 @@ const handleLogin = async () => {
       gender: data.gender,
       image: data.image,
     });
-    alert("Login successful!");
+    alert("Đăng nhập thành công !");
     navigateTo("/");
   } catch (error) {
     errorMessage.value = "Sai tài khoản hoặc mật khẩu!";

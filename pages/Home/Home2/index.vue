@@ -11,7 +11,7 @@
             <div class="w-4/5 text-center ">
                 <h1 class="text-[48px] text-white font-bold mx-auto max-w-[40%]">Find & Hire Experts for any Job</h1>
 
-                <p class="mt-4 text-slate-300 opacity-90 text-[17px] max-w-[45%] mx-auto">Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit excellent applicants over the years.</p>
+                <p class="mt-4 text-[#ffffff80] opacity-90 text-[17px] max-w-[45%] mx-auto">Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit excellent applicants over the years.</p>
             </div>
 
             <div class="relative w-full flex justify-center mt-8">
@@ -35,7 +35,7 @@
                         <IconField iconPosition="right" @mousedown="toggle2" class="!w-1/3" aria-haspopup="true" aria-controls="overlay_menu2">
                             <InputIcon class="pi pi-briefcase"></InputIcon>
                             <InputText class="w-full !h-16 ml-9" v-model="selectJobType" placeholder="Search" />
-                            <InputIcon class="pi pi-chevron-down"></InputIcon>
+                      n        <InputIcon class="pi pi-chevron-down"></InputIcon>
                         </IconField>
                         <Menu ref="menu2" id="overlay_menu2" :popup="true">
                             <template #start>

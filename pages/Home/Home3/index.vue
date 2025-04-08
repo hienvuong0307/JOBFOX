@@ -10,16 +10,25 @@
                 <div>
                     <h1 class="text-[48px] text-white font-bold max-w-md">Find a new job and build career</h1>
                     <div class="mt-8">
-                        <span class="text-slate-300 opacity-90 text-[17px]"> Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit excellent applicants over the years. </span>
+                        <span class="text-[#ffffff80] opacity-90 text-[17px]"> Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit excellent applicants over the years. </span>
                     </div>
                     <div class="mt-8">
-                        <InputGroup class="rounded-2xl">
-                            <IconField iconPosition="left" style="width: 35rem">
-                                <InputIcon class="pi pi-search"> </InputIcon>
-                                <InputText v-model="value" class="rounded-xl h-[6rem]" placeholder="Search" />
-                            </IconField>
-                            <Button label="Search" severity="info" />
+                        <InputGroup class="w-[641px] h-[76px] bg-white rounded-lg flex items-center px-4">
+                            <div class="flex items-center gap-2 w-full">
+                                <InputIcon class="pi pi-search text-[21px] text-[#3b82f6] ml-4" />
+                                <InputText v-model="searchValue"
+                                    class="w-full bg-transparent text-gray-500 text-[14px] ml-2 focus:outline-none"
+                                    placeholder="Search your keaywords" />
+                            </div>
+                            <div class="absolute ml-[29.6rem]">
+                                <Button label="Search" severity="info"
+                                    class="ml-[3.8rem] px-4 w-[150px] h-[60px] bg-[#3b82f6] rounded-lg text-[white] text-[17px] "
+                                    @click="handleSearch" />
+                            </div>
                         </InputGroup>
+                    </div>
+                    <div class="mt-8">
+                        <span class="text-[#ffffff80] opacity-90 text-[17px]"> <span class="text-[#ffffff]">Popular Searches :</span>Designer, Developer, Web, IOS, PHP Senior Engineer</span>
                     </div>
                 </div>
             </div>
