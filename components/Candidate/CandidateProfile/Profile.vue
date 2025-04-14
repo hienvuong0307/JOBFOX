@@ -179,7 +179,7 @@ const startProgress = (index) => {
         }
 
         progressBars.value[index].value = newValue;
-    }, 20);
+    }, 13);
 };
 
 onMounted(() => {

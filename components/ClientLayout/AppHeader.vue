@@ -278,7 +278,7 @@ onUnmounted(() => {
                                         BLOG
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute left-full translate-x-[29%] top-0 hidden group-hover:block"> 
+                                    <div class="absolute left-full translate-x-[29%] top-0 hidden group-hover:block w-[150px]"> 
                                         <div class="flex flex-col card rounded-md gap-3">
                                             <nuxt-link to="/blog/blogs" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOGS</nuxt-link>
@@ -298,9 +298,7 @@ onUnmounted(() => {
                                         AUTH PAGES
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
-                                    <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
-                                       
+                                    <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block w-[179px]">
                                         <div class="flex flex-col card rounded-md gap-3">
                                             <nuxt-link to="/auth/Login" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN</nuxt-link>
@@ -323,10 +321,9 @@ onUnmounted(() => {
                                         UTILITY
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
                                     <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
                                         
-                                        <div class="flex flex-col card rounded-md gap-3">
+                                        <div class="flex flex-col card rounded-md gap-3 w-[170px]">
                                             <nuxt-link to="/utility/terms" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">TERM
                                                 OF SERVICES</nuxt-link>
@@ -344,10 +341,9 @@ onUnmounted(() => {
                                         SPECIAL
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <!-- <div class="absolute top-0 left-full w-[5.5rem] h-full"></div> -->
                                     <div class="absolute left-3/4 translate-x-1/2 top-0 hidden group-hover:block">
                                       
-                                        <div class="flex flex-col card rounded-md gap-3">
+                                        <div class="flex flex-col card rounded-md gap-3 w-[160px]">
                                             <nuxt-link to="/special/comingsoon" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">COMMING
                                                 SOON</nuxt-link>

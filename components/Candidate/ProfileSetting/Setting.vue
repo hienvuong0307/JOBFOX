@@ -82,7 +82,6 @@
         <div class="flex flex-col gap-5 w-[87%] card border border-solid border-slate-200 shadow-md rounded-md">
             <div class="">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Account Notifications -->
                     <div>
                         <h3 class="text-[20px] font-bold mb-3">Account Notifications</h3>
                         <div class="flex justify-between items-center py-2">
@@ -103,7 +102,6 @@
                         </div>
                     </div>
 
-                    <!-- Marketing Notifications -->
                     <div>
                         <h3 class="text-[20px] font-bold mb-3">Marketing Notifications</h3>
                         <div class="flex justify-between items-center py-2">

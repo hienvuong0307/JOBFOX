@@ -19,7 +19,7 @@
         </div>
 
 
-        <div class="flex justify-center mb-6">
+        <div class="flex justify-center mb-[10rem]">
             <ServiceJob />
         </div>
     </div>

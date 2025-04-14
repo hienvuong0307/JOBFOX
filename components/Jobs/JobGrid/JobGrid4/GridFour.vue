@@ -52,7 +52,7 @@
                                     <div class="flex flex-col gap-4">
                                         <div v-for="category in categories" :key="category.key" class="flex items-center w-[22rem]">
                                             <div class="flex items-center gap-2 flex-grow">
-                                                <Checkbox v-model="selectedCategories" :inputId="category.key" name="category" :value="category.name" />
+                                                <Checkbox v-model="selectedCategories" :inputId="category.key" name="category" :value="category.name" class="shadow-[0_0_3px_#1e293b33] rounded-[6px]" />
                                                 <label :for="category.key">{{ category.name }}</label>
                                             </div>
                                             <span class="bg-[#3b82f60d] text-[#3b82f6] text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full ml-auto">
@@ -69,8 +69,8 @@
                                 <div class="card flex justify-start ml-[-1rem] mt-[-1rem]">
                                     <div class="flex flex-col gap-4">
                                         <div v-for="salary in salaries" :key="salary.key" class="flex items-center w-[22rem]">
-                                            <div class="flex items-center gap-2 flex-grow">
-                                                <Checkbox v-model="selectedCategories" :inputId="salary.key" name="salary" :value="salary.name" />
+                                            <div class="flex items-center gap-2 flex-grow ">
+                                                <Checkbox v-model="selectedCategories" :inputId="salary.key" name="salary" :value="salary.name" class="shadow-[0_0_3px_#1e293b33] rounded-[6px]"/>
                                                 <label :for="salary.key">{{ salary.name }}</label>
                                             </div>
                                         </div>

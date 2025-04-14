@@ -1,5 +1,5 @@
 <template>
-    <div class="card w-4/5 bg-[#f8f9fc]">
+    <div class="card w-4/5 ">
         <div class="grid grid-cols-3 gap-4">
             <div class="col-span-2 mb-6">
                 <div class="ml-[1.5rem]">

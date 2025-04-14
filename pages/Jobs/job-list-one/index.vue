@@ -47,7 +47,7 @@
       <div class="flex justify-center">
           <ExploreJob></ExploreJob>
       </div>
-      <div class="flex justify-center mb-6">
+      <div class="flex justify-center mb-[10rem]">
           <ServicesJob></ServicesJob>
       </div>
     </div>

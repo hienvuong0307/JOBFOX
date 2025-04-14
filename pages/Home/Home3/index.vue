@@ -172,8 +172,8 @@ const animateCounter = (key, endValue, duration) => {
 
 
 onMounted(() => {
-    animateCounter('jobFulfillment', finalValues.jobFulfillment, 2000);
-    animateCounter('branches', finalValues.branches, 1500);
+    animateCounter('jobFulfillment', finalValues.jobFulfillment, 900);
+    animateCounter('branches', finalValues.branches, 1000);
     animateCounter('years', finalValues.years, 1000);
 });
 </script>

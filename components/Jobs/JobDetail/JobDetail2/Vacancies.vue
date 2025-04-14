@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center mt-20 ">
+    <div class="flex justify-center ">
         <div class="w-4/5 flex justify-between">
             <div class="text-center mx-auto max-w-[600px] ml-[21rem]">
                 <h1 class="text-4xl">Related Vacancies</h1>

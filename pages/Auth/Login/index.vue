@@ -57,6 +57,24 @@ const password = ref("");
 const errorMessage = ref("");
 
 const handleLogin = async () => {
+  errorMessage.value = "";
+
+  if (!username.value || !password.value) {
+    errorMessage.value = "Vui lòng điền đầy đủ thông tin!";
+    return;
+  }
+
+  const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
+  if (!usernameRegex.test(username.value)) {
+    errorMessage.value = "Username phải từ 3-20 ký tự và chỉ chứa chữ cái, số và dấu gạch dưới!";
+    return;
+  }
+
+  if (password.value.length < 6) {
+    errorMessage.value = "Mật khẩu phải có ít nhất 6 ký tự!";
+    return;
+  }
+
   try {
     const response = await fetch("https://dummyjson.com/auth/login", {
       method: "POST",

@@ -12,7 +12,7 @@
             <Carousel :value="value1" :numVisible="5" :numScroll="1" :responsiveOptions="responsiveOptions" circular :autoplayInterval="4000"  :showIndicators="false">
                 <template #item="slotProps">
                     <div class="relative w-[210px] h-[276px] !border-1 !border-solid !border-black rounded-lg shadow-1 m-2 p-4 bg-cover bg-center bg-no-repeat flex items-center justify-center group" :style="`background-image: url(${slotProps.data.image})`">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#161c2de6] opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#161c2de6] opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 rounded-lg"></div>
 
                         <div class="relative flex flex-col items-start justify-center font-semibold w-full h-full mt-[13rem]">
                             <p class="relative text-[19px] font-bold z-10 text-white transition-colors duration-500 ease-in-out group-hover:text-blue-500">
