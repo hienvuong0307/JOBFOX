@@ -35,7 +35,7 @@
                         <IconField iconPosition="right" @mousedown="toggle2" class="!w-1/3" aria-haspopup="true" aria-controls="overlay_menu2">
                             <InputIcon class="pi pi-briefcase"></InputIcon>
                             <InputText class="w-full !h-16 ml-9" v-model="selectJobType" placeholder="Search" />
-                      n        <InputIcon class="pi pi-chevron-down"></InputIcon>
+                              <InputIcon class="pi pi-chevron-down"></InputIcon>
                         </IconField>
                         <Menu ref="menu2" id="overlay_menu2" :popup="true">
                             <template #start>

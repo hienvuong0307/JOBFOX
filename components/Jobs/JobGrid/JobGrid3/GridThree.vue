@@ -1,6 +1,6 @@
 <template>
  <div class="card w-4/5">
-        <DataView :value="JobData" class="w-full"  paginator :rows="10">
+        <DataView :value="JobData" class="w-full"  paginator :rows="12">
             <template #list="slotProps">
                 <div class="grid grid-cols-3 gap-4">
                     <div v-for="(item, index) in slotProps.items" :key="index" class="">

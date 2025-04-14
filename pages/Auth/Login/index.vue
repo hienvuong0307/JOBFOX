@@ -13,7 +13,7 @@
         <div class="mt-4 text-center font-semibold text-lg mr-[13.5rem]">PLEASE SIGN IN</div>
 
         <div class="mt-4">
-          <label class="font-semibold text-sm">Your Email</label>
+          <label class="font-semibold text-sm">Username</label>
           <input v-model="username" type="text" placeholder="example@website.com"
             class="border border-gray-300 rounded p-2 w-full mt-1" />
         </div>

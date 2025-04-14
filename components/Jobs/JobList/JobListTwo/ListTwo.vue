@@ -47,7 +47,7 @@
                                             class="flex items-center w-[22rem]">
                                             <div class="flex items-center gap-2 flex-grow">
                                                 <Checkbox v-model="selectedCategories" :inputId="category.key"
-                                                    name="category" :value="category.name" />
+                                                    name="category" :value="category.name" class="shadow-[0_0_3px_#1e293b33] rounded-[6px]" />
                                                 <label :for="category.key">{{ category.name }}</label>
                                             </div>
                                             <span
@@ -67,7 +67,7 @@
                                             class="flex items-center w-[22rem]">
                                             <div class="flex items-center gap-2 flex-grow">
                                                 <Checkbox v-model="selectedCategories" :inputId="salary.key"
-                                                    name="salary" :value="salary.name" />
+                                                    name="salary" :value="salary.name" class="shadow-[0_0_3px_#1e293b33] rounded-[6px]" />
                                                 <label :for="salary.key">{{ salary.name }}</label>
                                             </div>
                                         </div>
@@ -102,7 +102,7 @@
                                             </div>
 
                                             <div class="flex flex-col flex-1">
-                                                <Tag class="text-[14px] bg-blue-100 text-blue-600 p-1 rounded w-[5rem]"
+                                                <Tag class="text-[13px] bg-blue-100 text-blue-600 p-1 rounded w-[5rem]"
                                                     :value="item.type"
                                                     style="background-color: #3b82f60d; color: #3b82f6" />
                                                 <span class="text-[13px] opacity-75"><i

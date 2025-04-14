@@ -13,7 +13,7 @@
                                         type="text"
                                         size="large"
                                         placeholder="Search..."
-                                        class="mt-2 w-[25rem]"
+                                        class="mt-2 w-[25rem] h-[3rem]"
                                         style="background-color: #fff; border: 1px solid #f1f5f9; border-radius: 6px; color: #1e293b; font-size: 15px; font-weight: 500; line-height: 26px"
                                     />
                                     <InputIcon class="pi pi-search" />

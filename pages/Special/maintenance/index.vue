@@ -26,7 +26,7 @@
         <div class="absolute flex justify-center bottom-60 translate-y-3/4 left-1/2 -translate-x-1/2">
             <div class="flex border border-solid border-slate-200 rounded-full !w-[500px] bg-white h-14">
                 <input class="!outline-none m-3 flex-1" />
-                <Button label="Đăng Ký" rounded class="m-1" severity="info"></Button>
+                <Button label="Đăng Ký" rounded class="mr-[2rem]" severity="info"></Button>
             </div>
         </div>
         <div class="absolute flex justify-center bottom-5 left-1/2 -translate-x-1/2">
