@@ -1,10 +1,10 @@
 <template>
   <div class="fixed inset-0 w-full h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
-    style="background-image: url('https://jobnova-shreethemes.vercel.app/static/media/bg3.b53090a36ed85cc017cd.jpg')">
+    style="background-image: url('https://jobnova-shreethemes.vercel.app/static/media/bg4.7f1da1e69a07f92f192a.jpg')">
 
     <div class="absolute inset-0 bg-gradient-to-b from-[#161c2d00] via-[#161c2d4d] to-[#161c2d]"></div>
-    <div class="absolute mr-[55rem]">
-      <div class="shadow-md rounded-lg p-6 w-[355px] bg-white">
+    <div class="absolute justify-center">
+      <div class="shadow-md rounded-lg p-6 w-[600px] bg-[#f8f9fc]">
         <div class="flex justify-center">
           <nuxt-link to="/" class="flex items-center">
             <img
@@ -62,11 +62,10 @@
         </div>
         <div class="flex justify-center mt-4 text-sm text-gray-500">
           <span>Don't have an account?</span>
-          <nuxt-link to="/auth/signup" class="text-blue-500 font-medium hover:underline ml-2">
-            Sign Up
+          <nuxt-link to="/auth/signuprecruiter" class="text-blue-500 font-medium hover:underline ml-2">
+            Sign Up As Recruiter
           </nuxt-link>
         </div>
-        
       </div>
     </div>
   </div>

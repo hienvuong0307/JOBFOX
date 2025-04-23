@@ -40,7 +40,7 @@
 
                                     <div
                                         class="absolute left-[-5px] top-[-6px] w-[75px] h-[75px] z-[2] overflow-hidden">
-                                    </div>
+                                    </div>           
                                     <div class="absolute right-2 top-2">
                                         <i class="pi pi-heart-fill text-[#dee2e6] hover:text-red-500 cursor-pointer transition-colors duration-200"
                                             style="font-size: 1.5rem;"></i>

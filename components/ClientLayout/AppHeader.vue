@@ -182,15 +182,26 @@
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/page') || $route.path.includes('/helpcenter') || $route.path.includes('/blog') ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             PAGE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
-                        <div class=" w-[16rem] absolute hidden group-hover/p:block">
-                            <div class="flex card flex-col gap-3 mt-5 rounded-md">
-                                <nuxt-link to="/aboutus" active-class="text-[#0b63f3]"
-                                    class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> ABOUT US
-                                </nuxt-link>
-                                <nuxt-link to="/services" active-class="text-[#0b63f3]"
-                                    class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">SERVICES</nuxt-link>
-                                <nuxt-link to="/pricing" active-class="text-[#0b63f3]"
-                                    class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">PRICING</nuxt-link>
+                        <div class="absolute hidden group-hover/p:block w-[14rem] h-[20rem]">
+                            <div class="flex flex-col gap-4 mt-5 card rounded-md">
+                                <div>
+                                    <nuxt-link to="/aboutus" active-class="text-[#0b63f3]"
+                                        class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
+                                        ABOUT US
+                                    </nuxt-link>
+                                </div>
+                                <div>
+                                    <nuxt-link to="/services" active-class="text-[#0b63f3]"
+                                        class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
+                                        SERVICES
+                                    </nuxt-link>
+                                </div>
+                                <div>
+                                    <nuxt-link to="/pricing" active-class="text-[#0b63f3]"
+                                        class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
+                                        PRICING
+                                    </nuxt-link>
+                                </div>
 
                                 <div class="relative group">
                                     <p to="/"
@@ -244,8 +255,13 @@
                                         <div class="flex flex-col card rounded-md gap-3 ">
                                             <nuxt-link to="/auth/Login" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN</nuxt-link>
+                                            <nuxt-link to="/auth/LoginRecruiter" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN RECRUITER</nuxt-link>
                                             <nuxt-link to="/auth/Signup" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP</nuxt-link>
+                                            <nuxt-link to="/auth/SignUpRecruiter" active-class="text-[#0b63f3]"
+                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP
+                                                RECRUITER</nuxt-link>
                                             <nuxt-link to="/auth/forgotpass" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FORGOT
                                                 PASSWORD</nuxt-link>
