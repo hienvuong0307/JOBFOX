@@ -20,6 +20,11 @@ import DataView from 'primevue/dataview';
 import Checkbox from 'primevue/checkbox';
 import Carousel from 'primevue/carousel';
 import Tag from 'primevue/tag';
+import TabView from 'primevue/tabview';
+import TabPanel from 'primevue/tabpanel';
+
+
+
 
 
 import 'primevue/resources/themes/lara-light-blue/theme.css'; 
@@ -46,6 +51,9 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('DataView', DataView); 
   nuxtApp.vueApp.component('Checkbox', Checkbox); 
   nuxtApp.vueApp.component('Carousel', Carousel); 
-  nuxtApp.vueApp.component('Tag', Tag); 
+  nuxtApp.vueApp.component('Tag', Tag);  
+  nuxtApp.vueApp.component('TabView', TabView); 
+  nuxtApp.vueApp.component('TabPanel', TabPanel); 
+
 
 });

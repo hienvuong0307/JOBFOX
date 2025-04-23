@@ -18,8 +18,8 @@
                             :class="['text-[13.5px] font-semibold flex items-center', $route.path.includes('/home') || $route.path === '/' ? 'text-[#0b63f3]' : '', scrollY === 0 ? 'hover:text-white' : 'hover:text-[#0b63f3]']">
                             HOME <i class="pi pi-sort-down-fill" style="font-size: 45%"></i>
                         </p>
-                        <div class="absolute hidden group-hover:block w-48">
-                            <div class="flex flex-col gap-4 card rounded-md mt-5">
+                        <div class="absolute hidden group-hover:block w-48 ">
+                            <div class="flex flex-col gap-4 card rounded-md mt-8 -ml-8 bg-white border-2 border-gray-100 shadow-lg">
                                 <nuxt-link to="/" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> HERO ONE
                                 </nuxt-link>
@@ -41,7 +41,7 @@
                             JOBS <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
                         <div class="absolute hidden group-hover/j:block w-[14rem] h-[20rem] ">
-                            <div class="flex flex-col gap-4 mt-5 card rounded-md">
+                            <div class="flex flex-col gap-4 mt-8 -ml-8 card rounded-md bg-white border-2 border-gray-100 shadow-lg">
                                 <div>
                                     <nuxt-link to="/jobs/job-categories" active-class="text-[#0b63f3]"
                                         class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">JOB
@@ -53,8 +53,8 @@
                                         JOB GRIDS
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute hidden left-3/4 translate-x-1/3 top-0 group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
+                                    <div class="absolute hidden left-[80%] translate-x-1/3 top-0 group-hover:block">
+                                        <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4 border-2 border-gray-100">
                                             <div class="space-y-4">
                                                 <nuxt-link to="/jobs/job-grid-one" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
@@ -79,8 +79,8 @@
                                         JOB LIST
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute left-3/4 translate-x-1/3 top-0 hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
+                                    <div class="absolute left-[80%] translate-x-1/3 top-0 hidden group-hover:block">
+                                        <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4 border-2 border-gray-100">
                                             <div class="space-y-4">
                                                 <nuxt-link to="/jobs/job-list-one" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
@@ -99,8 +99,8 @@
                                         JOB DETAIL
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute left-3/4 translate-x-1/3 top-0 hidden group-hover:block">
-                                        <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4">
+                                    <div class="absolute left-[80%] translate-x-1/3 top-0 hidden group-hover:block">
+                                        <div class="bg-white rounded-lg shadow-lg w-[14rem] p-4 border-2 border-gray-100">
                                             <div class="space-y-4">
                                                 <nuxt-link to="/jobs/job-detail-one" active-class="text-[#0b63f3]"
                                                     class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">JOB
@@ -142,7 +142,7 @@
                             EMPLOYERS <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
                         <div class="absolute hidden group-hover/e:block w-[16rem] ">
-                            <div class="card flex flex-col gap-3 rounded-md mt-5">
+                            <div class="card flex flex-col gap-3 rounded-md mt-8 -ml-8 bg-white border-2 border-gray-100 shadow-lg">
                                 <nuxt-link to="/employers/employers" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     EMPLOYERS </nuxt-link>
@@ -161,7 +161,7 @@
                             CANDIDATE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
                         <div class="absolute hidden group-hover/c:block w-[16rem] h-[10rem]">
-                            <div class="flex flex-col gap-3 mt-5 card rounded-md">
+                            <div class="flex flex-col gap-3 mt-8 -ml-8 card rounded-md bg-white border-2 border-gray-100 shadow-lg">
                                 <nuxt-link to="/candidate/candidates" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
                                     CANDIDATES </nuxt-link>
@@ -183,7 +183,7 @@
                             PAGE <span class="pi pi-sort-down-fill ml-1" style="font-size: 45%"></span>
                         </p>
                         <div class="absolute hidden group-hover/p:block w-[14rem] h-[20rem]">
-                            <div class="flex flex-col gap-4 mt-5 card rounded-md">
+                            <div class="flex flex-col gap-4 mt-8 -ml-8 card rounded-md bg-white border-2 border-gray-100 shadow-lg">
                                 <div>
                                     <nuxt-link to="/aboutus" active-class="text-[#0b63f3]"
                                         class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]">
@@ -210,7 +210,7 @@
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
                                     <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
-                                        <div class="flex flex-col card rounded-md gap-3">
+                                        <div class="flex flex-col card rounded-md gap-3 border-2 bg-white border-gray-100 shadow-lg">
                                             <nuxt-link to="/helpcenter/overview" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">OVERVIEW</nuxt-link>
                                             <nuxt-link to="/helpcenter/faqs" active-class="text-[#0b63f3]"
@@ -230,8 +230,8 @@
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
                                     <div
-                                        class="absolute left-full translate-x-[29%] top-0 hidden group-hover:block w-[150px]">
-                                        <div class="flex flex-col card rounded-md gap-3">
+                                        class="absolute left-full translate-x-[20%] top-0 hidden group-hover:block w-[155px]">
+                                        <div class="flex flex-col card rounded-md gap-3 border-2 bg-white border-gray-100 shadow-lg">
                                             <nuxt-link to="/blog/blogs" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">BLOGS</nuxt-link>
                                             <nuxt-link to="/blog/blog-sidebar" active-class="text-[#0b63f3]"
@@ -251,17 +251,12 @@
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
                                     <div
-                                        class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block w-[179px]">
-                                        <div class="flex flex-col card rounded-md gap-3 ">
+                                        class="absolute left-full translate-x-[18%] top-0 hidden group-hover:block w-[179px]">
+                                        <div class="flex flex-col card rounded-md gap-3 border-2 bg-white border-gray-100 shadow-lg">
                                             <nuxt-link to="/auth/Login" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN</nuxt-link>
-                                            <nuxt-link to="/auth/LoginRecruiter" active-class="text-[#0b63f3]"
-                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">LOGIN RECRUITER</nuxt-link>
                                             <nuxt-link to="/auth/Signup" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP</nuxt-link>
-                                            <nuxt-link to="/auth/SignUpRecruiter" active-class="text-[#0b63f3]"
-                                                class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">SIGNUP
-                                                RECRUITER</nuxt-link>
                                             <nuxt-link to="/auth/forgotpass" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">FORGOT
                                                 PASSWORD</nuxt-link>
@@ -279,9 +274,9 @@
                                         UTILITY
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute left-full translate-x-1/4 top-0 hidden group-hover:block">
+                                    <div class="absolute left-full translate-x-[18%] top-0 hidden group-hover:block">
 
-                                        <div class="flex flex-col card rounded-md gap-3 w-[170px]">
+                                        <div class="flex flex-col card rounded-md gap-3 w-[180px] border-2 bg-white border-gray-100 shadow-lg">
                                             <nuxt-link to="/utility/terms" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">TERM
                                                 OF SERVICES</nuxt-link>
@@ -299,9 +294,8 @@
                                         SPECIAL
                                         <span class="pi pi-chevron-right" style="font-size: 55%"></span>
                                     </p>
-                                    <div class="absolute left-3/4 translate-x-1/2 top-0 hidden group-hover:block">
-
-                                        <div class="flex flex-col card rounded-md gap-3 w-[160px]">
+                                    <div class="absolute left-3/4 translate-x-[43%] top-0 hidden group-hover:block">
+                                        <div class="flex flex-col card rounded-md gap-3 w-[170px] border-2 bg-white border-gray-100 shadow-lg">
                                             <nuxt-link to="/special/comingsoon" active-class="text-[#0b63f3]"
                                                 class="text-[12.5px] font-semibold block hover:text-[#0b63f3]">COMMING
                                                 SOON</nuxt-link>

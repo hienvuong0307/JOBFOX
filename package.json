@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,6 +13,10 @@
     "@nuxt/content": "^3.4.0",
     "@tailwindcss/vite": "^4.0.15",
     "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
     "nuxt": "^3.16.1",
     "primeicons": "^7.0.0",
     "primevue": "^3.53.1",
@@ -22,6 +26,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.13.2",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
     "nuxt-primevue": "^3.0.0",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
