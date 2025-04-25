@@ -143,6 +143,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import apiService from '../../../service/api/api.service'
 
 const router = useRouter();
 const email = ref("");
@@ -154,94 +155,87 @@ const contactNumber = ref("");
 const errorMessage = ref("");
 const loading = ref(false);
 
+const res = await apiService.get('/user')
+console.log(res.data.value);
+
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validatePassword = (password) => {
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  return hasUpperCase && hasNumber;
+};
+
+const validateFields = () => {
+  errorMessage.value = "";
+
+  if (!firstName.value || !lastName.value || !contactNumber.value) {
+    errorMessage.value = "Vui lòng điền đầy đủ thông tin!";
+    return false;
+  }
+
+  if (!email.value) {
+    errorMessage.value = "Vui lòng nhập email!";
+    return false;
+  }
+ "User validation failed: confirmPassword: please Confirm your password"
+
+
+  if (!password.value) {
+    errorMessage.value = "Vui lòng nhập mật khẩu!";
+    return false;
+  }
+  if (!validatePassword(password.value)) {
+    errorMessage.value = "Mật khẩu phải có ít nhất 1 chữ in hoa và 1 số!";
+    return false;
+  }
+
+  if (!confirmPassword.value) {
+    errorMessage.value = "Vui lòng xác nhận mật khẩu!";
+    return false;
+  }
+  if (password.value !== confirmPassword.value) {
+    errorMessage.value = "Mật khẩu xác nhận không khớp!";
+    return false;
+  }
+
+  return true;
+};
+
 const handleSignup = async () => {
-    try {
-        loading.value = true;
-        errorMessage.value = "";
+  if (!validateFields()) return;
 
-        if (!email.value || !password.value || !confirmPassword.value ||
-            !firstName.value || !lastName.value || !contactNumber.value) {
-            errorMessage.value = "Vui lòng điền đầy đủ thông tin!";
-            loading.value = false;
-            return;
-        }
+  loading.value = true;
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email.value)) {
-            errorMessage.value = "Email không hợp lệ!";
-            loading.value = false;
-            return;
-        }
-
-        if (firstName.value.length < 2 || firstName.value.length > 50) {
-            errorMessage.value = "Họ phải từ 2-50 ký tự!";
-            loading.value = false;
-            return;
-        }
-
-        if (lastName.value.length < 2 || lastName.value.length > 50) {
-            errorMessage.value = "Tên phải từ 2-50 ký tự!";
-            loading.value = false;
-            return;
-        }
-
-        const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
-        if (!phoneRegex.test(contactNumber.value)) {
-            errorMessage.value = "Số điện thoại không hợp lệ! Vui lòng nhập số điện thoại Việt Nam (VD: 0912345678)";
-            loading.value = false;
-            return;
-        }
-
-        const passwordRegex = /^[a-zA-Z0-9]{6,}$/;
-        if (!passwordRegex.test(password.value)) {
-            errorMessage.value = "Mật khẩu phải có ít nhất 6 ký tự và không chứa ký tự đặc biệt!";
-            loading.value = false;
-            return;
-        }
-
-        if (password.value !== confirmPassword.value) {
-            errorMessage.value = "Mật khẩu xác nhận không khớp!";
-            loading.value = false;
-            return;
-        }
-
-        const testConnection = await fetch("http://localhost:8000/");
-        if (!testConnection.ok) {
-            throw new Error("Server not responding");
-        }
-
-        const response = await fetch("http://localhost:8000/user/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                email: email.value,
-                password: password.value,
-                firstName: firstName.value,
-                lastName: lastName.value,
-                contactNumber: contactNumber.value, 
-                role: "employer",
-                status: "active"
-            })
-        });
-
-        const data = await response.json();
-        console.log('Server response:', data);
-
-        if (response.ok) {
-            alert("Đăng ký thành công!");
-            router.push("/auth/login");
-        } else {
-            errorMessage.value = data.message || "Đăng ký thất bại!";
-        }
-    } catch (error) {
-        console.error("Connection error:", error);
-        errorMessage.value = "Không thể kết nối đến server. Vui lòng kiểm tra lại kết nối!";
-    } finally {
-        loading.value = false;
+  apiService.post('/user/signup', {
+    email: email.value,
+    password: password.value,
+    confirmPassword: confirmPassword.value,
+    firstName: firstName.value,
+    lastName: lastName.value,
+    contactNumber: contactNumber.value,
+    role: "employer",
+    status: "active"
+  }).then((res) => {
+    console.log('Response:', res.data.value);
+    if (res.data.value) {
+      alert("Đăng ký thành công!");
+      router.push("/auth/login");
+    } else {
+      errorMessage.value = "Đăng ký thất bại!";
     }
+
+  })
+  .catch((err) => {
+    console.log(err);
+    errorMessage.value = "Không thể kết nối đến server!";
+  })
+  .finally(() => {
+    loading.value = false;
+  });
 };
 </script>
 

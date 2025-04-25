@@ -87,69 +87,78 @@
 
       </div>
     </div>
+    <div>
+      <!-- {{ res.data.value }} -->
+    </div>
   </div>
 </template>
 <script setup>
 import { ref } from "vue";
 import { setAuthCookies } from "~/composables/authCookie";
 import { useRouter } from "vue-router";
+import apiService from '../../../service/api/api.service'
 
 const router = useRouter();
 const email = ref("");
 const password = ref("");
 const errorMessage = ref("");
 const loading = ref(false);
+const res = await apiService.get('/user')
+console.log(res.data.value);
+
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validatePassword = (password) => {
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  return hasUpperCase && hasNumber;
+};
 
 const handleLogin = async () => {
-  try {
-    loading.value = true;
-    errorMessage.value = "";
+  errorMessage.value = "";
 
-    if (!email.value || !password.value) {
-      errorMessage.value = "Vui lòng điền đầy đủ thông tin!";
-      return;
-    }
+  if (!email.value) {
+    errorMessage.value = "Vui lòng nhập email!";
+    return;
+  }
+  if (!validateEmail(email.value)) {
+    errorMessage.value = "Email không đúng định dạng!";
+    return;
+  }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value)) {
-      errorMessage.value = "Email không hợp lệ!";
-      return;
-    }
+  if (!password.value) {
+    errorMessage.value = "Vui lòng nhập mật khẩu!";
+    return;
+  }
+  if (!validatePassword(password.value)) {
+    errorMessage.value = "Mật khẩu phải có ít nhất 1 chữ in hoa và 1 số!";
+    return;
+  }
 
-    const response = await fetch("http://localhost:8000/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        email: email.value,
-        password: password.value,
-      }),
-    });
+  loading.value = true;
 
-    const data = await response.json();
-
-    if (response.ok) {
-      setAuthCookies(data.accessToken, data.refreshToken, {
-        id: data.user.id,
-        email: data.user.email,
-        role: data.user.role,
-        firstName: data.user.firstName,
-        lastName: data.user.lastName
-      });
-
+  apiService.post('/user/login', {
+    email: email.value,
+    password: password.value,
+  }).then((res) => {
+    console.log('Response:', res.data.value); 
+    if (res.data.value) {
       alert("Đăng nhập thành công!");
       router.push("/");
     } else {
-      errorMessage.value = data.message || "Sai email hoặc mật khẩu!";
+      errorMessage.value = "Đăng nhập thất bại!";
     }
-  } catch (error) {
-    console.error("Login error:", error);
-    errorMessage.value = "Lỗi kết nối tới server!";
-  } finally {
-    loading.value = false;
-  }
+  })
+    .catch((err) => {
+      console.log(err);
+      errorMessage.value = "Không thể kết nối đến server!";
+    })
+    .finally(() => {
+      loading.value = false;
+    });
 };
 
 const handleGoogleLogin = async () => {

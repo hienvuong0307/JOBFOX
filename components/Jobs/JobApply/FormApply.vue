@@ -1,45 +1,115 @@
 <template>
     <div class="flex flex-col gap-5 w-2/5 card border border-solid border-slate-200 shadow-md rounded-md">
         <div class="flex flex-col gap-3">
-            <label class="text-xl font-medium" for="email"> Your Email :<span class="text-red-500">*</span></label>
-            <InputText id="email" v-model="email" placeholder="Your email :" style="padding-left: 10px;width: 550px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
+            <label class="text-xl font-medium" for="name">Name<span class="text-red-500">*</span></label>
+            <InputText id="name" v-model="name" placeholder="Name" class="input-field" />
         </div>
         <div class="flex flex-col gap-3">
-            <label class="text-xl font-medium" for="phone"> Your Phone no. :<span class="text-red-500">*</span></label>
-            <InputText id="phone" v-model="phone" placeholder="Your phone no. :"  style="padding-left: 10px;width: 550px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
+            <label class="text-xl font-medium" for="email">Email:<span class="text-red-500">*</span></label>
+            <InputText id="email" v-model="email" placeholder="example@techfox.la" class="input-field" />
         </div>
         <div class="flex flex-col gap-3">
-            <label class="text-xl font-medium" for="title"> Job Title :<span class="text-red-500">*</span></label>
-            <InputText id="title" v-model="title" placeholder="Title :"  style="padding-left: 10px;width: 550px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
+            <label class="text-xl font-medium" for="phone">Phone:<span class="text-red-500">*</span></label>
+            <InputText id="phone" v-model="contactNumber" placeholder="Phone Number" class="input-field" />
         </div>
-        <div class="flex flex-col gap-3">
-            <label class="text-xl font-medium" for="type"> Types of jobs :</label>
-            <Dropdown id="type" v-model="type" :options="data" placeholder="In Office" class="w-full md:w-14rem"  style="padding-left: 10px;width: 550px;height: 40px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
-        </div>
-        <div class="flex flex-col gap-3">
-            <label class="text-xl font-medium" for="description"> Description :</label>
-            <Textarea id="description" v-model="description" placeholder="Describe the job :"  style="padding-left: 10px;width: 550px;height: 70px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" />
-        </div>
-        <div class="flex flex-col gap-3">
-            <label class="text-xl font-medium" for="upload"> Upload Your Cv / Resume :</label>
-            <div class="">
-                <InputText type="file" v-model="file" class=""  style="width: 550px;height: 28px; margin-top: 0.5rem; border: 1px solid lightgray; border-radius: 4px" ></InputText>
-            </div>
+        <div v-if="errorMessage" class="text-red-500 text-sm mt-2">
+            {{ errorMessage }}
         </div>
         <div class="flex align-items-center gap-2">
-            <Checkbox v-model="pizza" inputId="ingredient1" name="pizza" value="Cheese" />
-            <label for="ingredient1" class="">I Accept <span class="text-blue-500">Terms And Condition</span> </label>
-        </div>
-        <div class="flex align-items-center gap-2">
-            <Button :label="'APPLY NOW'" style="background-color: #0b63f3; color: #ffffff" iconPos="right" class="text-[14px] px-6 py-3 w-[126   55px] h-[34px]" size="small" />
+            <Button :label="loading ? 'ĐANG XỬ LÝ...' : 'LƯU THÔNG TIN'" :disabled="loading" @click="handleSave"
+                style="background-color: #0b63f3; color: #ffffff" class="text-[14px] px-6 py-3" />
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-const data = ref(['All Job', ' Full Time', 'Half Time', 'Remote', 'In Ofice']);
+import apiService from '../../../service/api/api.service'
+
+const name = ref('');
+const email = ref('');
+const contactNumber = ref('');
+const errorMessage = ref('');
+const loading = ref(false);
+
+const res = await apiService.get('/manager/jobs')
+console.log(res.data.value);
+
+const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+};
+
+const validatePhone = (phone) => {
+    const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+    return phoneRegex.test(phone);
+};
+
+const handleSave = async () => {
+    errorMessage.value = "";
+
+    if (!name.value) {
+        errorMessage.value = "Vui lòng nhập họ tên!";
+        return;
+    }
+
+    if (!email.value) {
+        errorMessage.value = "Vui lòng nhập email!";
+        return;
+    }
+    if (!validateEmail(email.value)) {
+        errorMessage.value = "Email không đúng định dạng!";
+        return;
+    }
+
+    if (!contactNumber.value) {
+        errorMessage.value = "Vui lòng nhập số điện thoại!";
+        return;
+    }
+    if (!validatePhone(contactNumber.value)) {
+        errorMessage.value = "Số điện thoại không hợp lệ!";
+        return;
+    }
+
+    loading.value = true;
+
+    apiService.post('/manager/jobs', {
+        name: name.value,
+        email: email.value,
+        contactNumber: parseInt(contactNumber.value)
+    }).then((res) => {
+        console.log('Response:', res.data.value);
+        if (res.data.value) {
+            alert("Lưu thông tin thành công!");
+            resetForm();
+        } else {
+            errorMessage.value = "Lưu thông tin thất bại!";
+        }
+    })
+        .catch((err) => {
+            console.log(err);
+            errorMessage.value = "Không thể kết nối đến server!";
+        })
+        .finally(() => {
+            loading.value = false;
+        });
+};
+
+const resetForm = () => {
+    name.value = '';
+    email.value = '';
+    contactNumber.value = '';
+    errorMessage.value = '';
+};
 </script>
 
-<style>
+<style scoped>
+.input-field {
+    padding-left: 10px;
+    width: 550px;
+    height: 40px;
+    margin-top: 0.5rem;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
 </style>
