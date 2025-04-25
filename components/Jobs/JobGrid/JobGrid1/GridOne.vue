@@ -10,10 +10,10 @@
                   <Card style="overflow: hidden; box-shadow: 0 0 3px #1e293b26">
                     <template #header>
                       <div class="flex items-center flex-1 m-5">
-                        <div class="bg-white border w-15 h-15 border-slate-100 border-solid rounded-lg absolute mb-[4rem]" 
-                             style="box-shadow: 0 5px 13px #1e293b33; border-radius: 6px">
-                          <img :src="item.image" :alt="item.company" 
-                               class="!w-14 !h-14 bg-white m-1 rounded-lg" />
+                        <div
+                          class="bg-white border w-15 h-15 border-slate-100 border-solid rounded-lg absolute mb-[4rem]"
+                          style="box-shadow: 0 5px 13px #1e293b33; border-radius: 6px">
+                          <img :src="item.image" :alt="item.company" class="!w-14 !h-14 bg-white m-1 rounded-lg" />
                         </div>
                         <div class="grow"></div>
                       </div>
@@ -22,20 +22,22 @@
                       <p class="text-[18px] font-bold">{{ item.company }}</p>
                     </template>
                     <template #subtitle>
-                      <p class="text-xl opacity-75">{{ item.CompanyTitle }}</p>
+                      <p class="text-[14px] opacity-75">{{ item.CompanyTitle }}</p>
                       <div class="w-full h-[1px] bg-slate-100 mt-5"></div>
-                      <p class="text-xl opacity-75">{{ item.position }}</p>
-                      <p class="text-xl opacity-75">{{ item.positionName }}</p>
-
-                    </template>
-                    <template #footer>
-                      
-                      <div class="flex items-center justify-between gap-2 m-2 mb-1">
-                        <p class="text-[16px] opacity-75 flex items-center">
+                      <div class="mt-3">
+                        <p class="text-[15px] font-bold">{{ item.position }}</p>
+                        <p class="text-[15px] ">{{ item.positionName }}</p>
+                        
+                        <p class="text-[13px] opacity-75 flex items-center mt-2">
                           <i class="pi pi-map-marker max-w-[200%]" style="color: #94a3b8"></i>
                           {{ item.location }}
                         </p>
-                        <p class="text-xl text-[#3b82f6]">{{ item.salary }}</p>
+                        <p class="text-[14px] text-[#3b82f6] mt-1 ">{{ item.salary }}</p>
+                      </div>
+                      <div class= "absolute mt-2 ml-[4.5rem]">
+                        <NuxtLink :to="`/jobs/job-apply/${item.id}`" class="p-button p-button-primary">
+                          Apply Now
+                        </NuxtLink>
                       </div>
                     </template>
                   </Card>
@@ -66,9 +68,10 @@ onMounted(async () => {
   try {
     loading.value = true;
     const res = await apiService.get('/jobs?page=1&limit=12');
-    
+
     if (res.data.value?.data) {
       const formattedJobs = res.data.value.data.map(job => ({
+        id: job._id,
         company: job.companyName,
         image: job.CompanyLogoUrl || 'https://placehold.co/56x56/3b82f6/ffffff?text=' + job.companyName.charAt(0),
         posted: formatDate(job.createdAt),
@@ -112,15 +115,15 @@ const formatSalary = (salary) => {
 
 <style scoped>
 .underline-hover::after {
-    content: '';
-    @apply absolute bottom-[-3px] left-0 w-0 h-[2px] bg-blue-500 transition-[width] duration-300;
+  content: '';
+  @apply absolute bottom-[-3px] left-0 w-0 h-[2px] bg-blue-500 transition-[width] duration-300;
 }
 
 .underline-hover:hover::after {
-    @apply w-full;
+  @apply w-full;
 }
 
 .bg-primary {
-    background-color: #3b82f60d;
+  background-color: #3b82f60d;
 }
 </style>

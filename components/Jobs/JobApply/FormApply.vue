@@ -24,7 +24,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRoute } from 'vue-router';
 import apiService from '../../../service/api/api.service'
+
+const route = useRoute();
+const jobId = ref(route.params.id); 
 
 const name = ref('');
 const email = ref('');
@@ -76,23 +80,26 @@ const handleSave = async () => {
     apiService.post('/manager/jobs', {
         name: name.value,
         email: email.value,
-        contactNumber: parseInt(contactNumber.value)
+        contactNumber: contactNumber.value.startsWith('0') 
+            ? parseInt('84' + contactNumber.value.substring(1)) 
+            : parseInt(contactNumber.value),
+        jobPosts: [jobId.value] // Thêm jobId vào mảng jobPosts
     }).then((res) => {
         console.log('Response:', res.data.value);
         if (res.data.value) {
-            alert("Lưu thông tin thành công!");
+            alert("Ứng tuyển thành công!");
             resetForm();
         } else {
-            errorMessage.value = "Lưu thông tin thất bại!";
+            errorMessage.value = "Ứng tuyển thất bại!";
         }
     })
-        .catch((err) => {
-            console.log(err);
-            errorMessage.value = "Không thể kết nối đến server!";
-        })
-        .finally(() => {
-            loading.value = false;
-        });
+    .catch((err) => {
+        console.log(err);
+        errorMessage.value = "Không thể kết nối đến server!";
+    })
+    .finally(() => {
+        loading.value = false;
+    });
 };
 
 const resetForm = () => {
