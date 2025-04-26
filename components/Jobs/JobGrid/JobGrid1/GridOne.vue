@@ -7,40 +7,44 @@
             <template #list="slotProps">
               <div class="grid grid-cols-4 gap-5">
                 <div v-for="(item, index) in slotProps.items" :key="index" class="p-1 mt-[4rem]">
-                  <Card style="overflow: hidden; box-shadow: 0 0 3px #1e293b26">
-                    <template #header>
-                      <div class="flex items-center flex-1 m-5">
-                        <div
-                          class="bg-white border w-15 h-15 border-slate-100 border-solid rounded-lg absolute mb-[4rem]"
-                          style="box-shadow: 0 5px 13px #1e293b33; border-radius: 6px">
-                          <img :src="item.image" :alt="item.company" class="!w-14 !h-14 bg-white m-1 rounded-lg" />
+                  <NuxtLink :to="`/jobs/job-detail-two/${item.id}`" class="">
+                    <Card style="overflow: hidden; box-shadow: 0 0 3px #1e293b26">
+                      <template #header>
+                        <div class="flex items-center flex-1 m-5">
+                          <div
+                            class="bg-white border w-15 h-15 border-slate-100 border-solid rounded-lg absolute mb-[4rem]"
+                            style="box-shadow: 0 5px 13px #1e293b33; border-radius: 6px">
+                            <img :src="item.image" :alt="item.company" class="!w-14 !h-14 bg-white m-1 rounded-lg" />
+                          </div>
+                          <div class="grow"></div>
                         </div>
-                        <div class="grow"></div>
-                      </div>
-                    </template>
-                    <template #title>
-                      <p class="text-[18px] font-bold">{{ item.company }}</p>
-                    </template>
-                    <template #subtitle>
-                      <p class="text-[14px] opacity-75">{{ item.CompanyTitle }}</p>
-                      <div class="w-full h-[1px] bg-slate-100 mt-5"></div>
-                      <div class="mt-3">
-                        <p class="text-[15px] font-bold">{{ item.position }}</p>
-                        <p class="text-[15px] ">{{ item.positionName }}</p>
-                        
-                        <p class="text-[13px] opacity-75 flex items-center mt-2">
-                          <i class="pi pi-map-marker max-w-[200%]" style="color: #94a3b8"></i>
-                          {{ item.location }}
-                        </p>
-                        <p class="text-[14px] text-[#3b82f6] mt-1 ">{{ item.salary }}</p>
-                      </div>
-                      <div class= "absolute mt-2 ml-[4.5rem]">
-                        <NuxtLink :to="`/jobs/job-apply/${item.id}`" class="p-button p-button-primary">
-                          Apply Now
-                        </NuxtLink>
-                      </div>
-                    </template>
-                  </Card>
+                      </template>
+                      <template #title>
+                        <p class="text-[18px] font-bold">{{ item.company }}</p>
+                      </template>
+                      <template #subtitle>
+                        <p class="text-[14px] opacity-75">{{ item.CompanyTitle }}</p>
+                        <div class="w-full h-[1px] bg-slate-100 mt-5"></div>
+                        <div class="mt-2 gap-2 mb-8">
+                          <p class="text-[15px] font-bold">{{ item.position }}</p>
+                          <p class="text-[15px] ">{{ item.positionName }}</p>
+
+                          <p class="text-[13px] opacity-75 flex items-center mt-2">
+                            <i class="pi pi-map-marker max-w-[200%]" style="color: #94a3b8"></i>
+                            {{ item.location }}
+                          </p>
+                          <tag class="text-[12px] text-white mt-2 ">{{ item.salary }}</tag>
+                        </div>
+                        <div class>
+                          <div class="absolute ml-[4.5rem]">
+                            <NuxtLink :to="`/jobs/job-apply/${item.id}`" class="p-button p-button-primary text-white">
+                              Apply Now
+                            </NuxtLink>
+                          </div>
+                        </div>
+                      </template>
+                    </Card>
+                  </NuxtLink>
                 </div>
               </div>
             </template>
@@ -76,7 +80,7 @@ onMounted(async () => {
         image: job.CompanyLogoUrl || 'https://placehold.co/56x56/3b82f6/ffffff?text=' + job.companyName.charAt(0),
         posted: formatDate(job.createdAt),
         type: 'Full Time',
-        position: job.jobTitle,
+        position: job.jobTitle, 
         positionName: job.positionName,
         location: job.location,
         CompanyTitle: job.CompanyTitle,

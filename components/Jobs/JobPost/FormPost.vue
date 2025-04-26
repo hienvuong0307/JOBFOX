@@ -1,9 +1,11 @@
 <template>
   <div class="flex flex-col gap-5 w-2/5 card border border-solid border-slate-200 shadow-md rounded-md">
     <div class="flex flex-col gap-5">
-      <div>
-        <span class="text-4xl font-semibold flex justify-center">Create Job</span>
-      </div>
+            <nuxt-link to="/" class="flex items-center justify-center">
+            <img src="https://fox.ai.vn/wp-content/uploads/2024/07/Logo_Original-1.png" alt="Logo"
+              class="h-[60px] w-[120px]" />
+          </nuxt-link>
+     
       <div class="flex flex-col">
         <label class="text-xl font-medium" for="companyName">Company Name</label>
         <InputText id="companyName" v-model="companyName" placeholder="Name Company" class="input-field" />
@@ -177,6 +179,12 @@ const handlePostJob = async () => {
     errorMessage.value = "URL ảnh không hợp lệ! URL phải kết thúc bằng .jpg, .png, .gif,...";
     return;
   }
+
+  if (salary.value && isNaN(salary.value)) {
+    errorMessage.value = "Lương phải là một số hợp lệ!";
+    return;
+  }
+
 
   loading.value = true;
   apiService.post('/jobs', {

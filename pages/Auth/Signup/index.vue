@@ -169,6 +169,11 @@ const validatePassword = (password) => {
   return hasUpperCase && hasNumber;
 };
 
+const validateContactNumber = (contactNumber) => {
+  const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+  return phoneRegex.test(contactNumber);
+};
+
 const validateFields = () => {
   errorMessage.value = "";
 
@@ -181,8 +186,11 @@ const validateFields = () => {
     errorMessage.value = "Vui lòng nhập email!";
     return false;
   }
- "User validation failed: confirmPassword: please Confirm your password"
-
+ 
+  if(!validateEmail(email.value)) {
+    errorMessage.value = "Email không đúng định dạng!";
+    return false;
+  }
 
   if (!password.value) {
     errorMessage.value = "Vui lòng nhập mật khẩu!";
@@ -199,6 +207,11 @@ const validateFields = () => {
   }
   if (password.value !== confirmPassword.value) {
     errorMessage.value = "Mật khẩu xác nhận không khớp!";
+    return false;
+  }
+
+  if (!validateContactNumber(contactNumber.value)) {
+    errorMessage.value = "Số điện thoại không hợp lệ!";
     return false;
   }
 

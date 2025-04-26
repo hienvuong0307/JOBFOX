@@ -1,5 +1,9 @@
 <template>
     <div class="flex flex-col gap-5 w-2/5 card border border-solid border-slate-200 shadow-md rounded-md">
+        <nuxt-link to="/" class="flex items-center justify-center">
+            <img src="https://fox.ai.vn/wp-content/uploads/2024/07/Logo_Original-1.png" alt="Logo"
+                class="h-[60px] w-[120px]" />
+        </nuxt-link>
         <div class="flex flex-col gap-3">
             <label class="text-xl font-medium" for="name">Name<span class="text-red-500">*</span></label>
             <InputText id="name" v-model="name" placeholder="Name" class="input-field" />
@@ -16,8 +20,8 @@
             {{ errorMessage }}
         </div>
         <div class="flex align-items-center gap-2">
-            <Button :label="loading ? 'ĐANG XỬ LÝ...' : 'LƯU THÔNG TIN'" :disabled="loading" @click="handleSave"
-                style="background-color: #0b63f3; color: #ffffff" class="text-[14px] px-6 py-3" />
+            <Button :label="loading ? 'LOADING...' : 'APPLY'" :disabled="loading" @click="handleSave"
+                style="background-color: #0b63f3; color: #ffffff" class="text-[16px] px-6 py-3 w-[150px]" />
         </div>
     </div>
 </template>
@@ -28,7 +32,7 @@ import { useRoute } from 'vue-router';
 import apiService from '../../../service/api/api.service'
 
 const route = useRoute();
-const jobId = ref(route.params.id); 
+const jobId = ref(route.params.id);
 
 const name = ref('');
 const email = ref('');
@@ -80,8 +84,8 @@ const handleSave = async () => {
     apiService.post('/manager/jobs', {
         name: name.value,
         email: email.value,
-        contactNumber: contactNumber.value.startsWith('0') 
-            ? parseInt('84' + contactNumber.value.substring(1)) 
+        contactNumber: contactNumber.value.startsWith('0')
+            ? parseInt('84' + contactNumber.value.substring(1))
             : parseInt(contactNumber.value),
         jobPosts: [jobId.value] // Thêm jobId vào mảng jobPosts
     }).then((res) => {
@@ -93,13 +97,13 @@ const handleSave = async () => {
             errorMessage.value = "Ứng tuyển thất bại!";
         }
     })
-    .catch((err) => {
-        console.log(err);
-        errorMessage.value = "Không thể kết nối đến server!";
-    })
-    .finally(() => {
-        loading.value = false;
-    });
+        .catch((err) => {
+            console.log(err);
+            errorMessage.value = "Không thể kết nối đến server!";
+        })
+        .finally(() => {
+            loading.value = false;
+        });
 };
 
 const resetForm = () => {

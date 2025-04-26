@@ -7,9 +7,7 @@
             ></div>
 
             <div class="absolute top-[20%] left-1/2 transform -translate-x-1/2 text-center">
-                <img src="https://jobnova-shreethemes.vercel.app/static/media/lenovo-logo.ad2ec171d6df96c88b9e.png" 
-                alt="Lenovo Logo"
-                class="w-[65px] h-[65px] rounded-full object-cover border-4 border-white shadow-lg" />
+                <img style="height: 300px; width: 400px" src="@/assets/img/logo3.png" alt="" />
             </div>
 
             <div class="absolute top-0 w-full flex justify-center z-10 mt-[8rem]">
