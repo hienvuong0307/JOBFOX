@@ -147,7 +147,7 @@ const handleLogin = async () => {
     console.log('Response:', res.data.value); 
     if (res.data.value) {
       alert("Đăng nhập thành công!");
-      router.push("/");
+      router.push("/home/home1");
     } else {
       errorMessage.value = "Đăng nhập thất bại!";
     }

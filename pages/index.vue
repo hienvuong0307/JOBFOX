@@ -1,132 +1,248 @@
-
 <template>
-    <div class="bg-[#3b82f6] w-full h-[800px] flex justify-center ">
-        <div class=" flex w-4/5 gap-6 mt-3 ">
-            <div class="w-1/2 flex items-center">
-                <div>
-                    <div class="">
-                        <h1 class="text-[48px] text-white font-bold max-w-[49%]">
-                            Get hired
-                        </h1>
-                        <h1 class="text-[48px] text-white font-bold max-w-[60%]">
-                            by the popular
-                            candidates.
-                        </h1>
-                    </div>
-                    <div class="mt-8">
-                        <span class="text-[#ffffff80] text-[17px] opacity-90">
-                            Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit
-                            excellent applicants over the years.
-                        </span>
-                    </div>
-                    <div class="mt-8">
-                        <InputGroup class="w-[546px] h-[50px] bg-white rounded-full flex items-center px-4">
-                            <div class="flex items-center gap-2 w-full">
-                                <InputIcon class="pi pi-search text-[21px] text-[black]" />
-                                <InputText v-model="searchValue"
-                                    class="w-full bg-transparent text-gray-500 text-[14px] focus:outline-none"
-                                    placeholder="Search jobs & candidates ..." />
-                            </div>
-                            <div class="absolute ml-[29.6rem]">
-                                <Button label="Search" severity="info"
-                                    class="ml-3 px-4 w-[105px] h-[46px] bg-[#3b82f6] rounded-full text-[white] text-[17px] "
-                                    @click="handleSearch" />
-                            </div>
-                        </InputGroup>
-                    </div>
-                </div>
-            </div>
-            <div class="w-1/2 h-auto flex items-center justify-end">
-                <img src="https://jobnova-shreethemes.vercel.app/static/media/hero1.a22879249c0e43ecdddf.png" alt=""
-                    class="w-4/5 mt-20 mb-20">
-            </div>
-        </div>
-    </div>
-    <div class="flex justify-center relative">
-        <div class="flex justify-center w-4/5 mt-10 gap-16">
-            <div class="relative">
-                <img src="https://jobnova-shreethemes.vercel.app/static/media/ab01.016884c7bf778010e79c.jpg"
-                    class="rounded-md w-9/12" />
-                <div class="bg-white absolute flex top-60 justify-center items-center w-[55%] rounded-md left-[47%]">
-                    <img class="rounded-md w-11/12 m-3"
-                        src="https://jobnova-shreethemes.vercel.app/static/media/ab02.f851a3dde08585493f97.jpg" alt="">
-                </div>
-                <div
-                    class="bg-white w-28 h-28 absolute top-48 right-[17%] rounded-full flex items-center justify-center">
-                    <p class="text-blue-600 text-3xl">&#11208;</p>
-                </div>
-            </div>
-            <div class="w-2/4 h-auto flex justify-center mt-10">
-                <div class="w-4/5 mt-5">
-                    <h3 class="text-[28px] font-semibold">
-                        Millions of jobs.<br />
-                        Find the one that's right for you.
-                    </h3>
-                    <div class="mt-5 w-[120%]">
-                        <span class="text-slate-500 opacity-90 text-xl">
-                            Search all the open positions on the web. Get your own personalized salary estimate.
-                            Read
-                            reviews
-                            on
-                            over 30000+ companies worldwide.<br /><br />
-                        </span>
-                    </div>
-                    <div>
-                        <i class="pi pi-check-circle" style="color: #3b82f6"></i><span class="text-xl opacity-80">
-                            {{ " Digital Marketing Solutions for Tomorrow " }}<br /></span>
-                        <i class="pi pi-check-circle" style="color: #3b82f6"></i><span class="text-xl opacity-80">
-                            Our
-                            {{ " Talented & Experienced Marketing Agency " }}<br /></span>
-                        <i class="pi pi-check-circle" style="color: #3b82f6"></i><span class="text-xl opacity-80">
-                            {{ " Create your own skin to match your brand" }}</span>
-                    </div>
-                    <div class="mt-10">
-                        <Button :label="'tất cả'" severity="info" icon="pi pi-arrow-right" iconPos="right"
-                            class="!text-xl" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <PopularCategories></PopularCategories>
-    <ExploreJob></ExploreJob>
-    <ServiceJob></ServiceJob>
-    <div class="flex justify-center mt-10 relative">
-        <div class="flex justify-center w-4/5 mt-10 gap-16">
-            <CompaniesJob></CompaniesJob>
-            <div class="shrink-0"></div>
-            <div class="relative">
-                <div class="flex justify-end"><img
-                        src="https://jobnova-shreethemes.vercel.app/static/media/ab03.2b6e24b09b3690407ec5.jpg"
-                        class="rounded-md w-9/12 h-auto" /></div>
-                <div class="bg-white absolute flex justify-center items-center w-[45%] rounded-md top-1/2 left-0">
-                    <img class="rounded-md w-11/12 h-auto m-3"
-                        src="https://jobnova-shreethemes.vercel.app/static/media/ab04.c122948ac7bf15368325.jpg" alt="">
-                </div>
-                <div
-                    class="bg-white w-28 h-28 absolute top-[37%] left-[15%] rounded-full flex items-center justify-center">
-                    <p class="text-blue-600 text-3xl">&#11208;</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flex justify-center">
-        <Blog></Blog>
-    </div>
+  <div class="fixed inset-0 w-full h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
+    style="background-image: url('https://jobnova-shreethemes.vercel.app/static/media/bg3.b53090a36ed85cc017cd.jpg')">
 
+    <div class="absolute inset-0 bg-gradient-to-b from-[#161c2d00] via-[#161c2d4d] to-[#161c2d]"></div>
+    <div class="absolute justify-center">
+      <div class="shadow-md rounded-lg p-6 w-[500px] bg-white">
+        <div class="flex justify-center">
+          <nuxt-link to="/home/home1" class="flex items-center">
+            <img src="https://fox.ai.vn/wp-content/uploads/2024/07/Logo_Original-1.png" alt="Logo"
+              class="h-[40px] w-[100px]" />
+          </nuxt-link>
+        </div>
+        <div class="mt-4 text-center font-semibold text-lg">PLEASE SIGN IN</div>
+
+        <TabView class="">
+          <TabPanel header="Tìm việc">
+            <div class="">
+              <label class="font-semibold text-sm">Email</label>
+              <input v-model="email" type="email" placeholder="example@website.com"
+                class="border border-gray-300 rounded p-2 w-full mt-1" required />
+            </div>
+            <div class="mt-4">
+              <label class="font-semibold text-sm">Password</label>
+              <input v-model="password" type="password" placeholder="Password"
+                class="border border-gray-300 rounded p-2 w-full mt-1" required />
+            </div>
+          </TabPanel>
+          <TabPanel header="Nhà tuyển dụng">
+            <div class="">
+              <label class="font-semibold text-sm">Username</label>
+              <input v-model="username" type="text" placeholder="example@website.com"
+                class="border border-gray-300 rounded p-2 w-full mt-1" />
+            </div>
+            <div class="mt-4">
+              <label class="font-semibold text-sm">Password</label>
+              <input v-model="password" type="password" placeholder="Password"
+                class="border border-gray-300 rounded p-2 w-full mt-1" />
+            </div>
+          </TabPanel>
+        </TabView>
+
+
+
+        <div class="flex justify-between text-gray-500 text-sm mt-4">
+          <span>Remember Me</span>
+          <nuxt-link to="/auth/forgotpass" class="cursor-pointer hover:underline">
+            Forgot password?
+          </nuxt-link>
+        </div>
+        <div class="mt-3">
+          <button @click="handleLogin" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 w-full rounded"
+            :disabled="loading">
+            {{ loading ? 'ĐANG XỬ LÝ...' : 'ĐĂNG NHẬP' }}
+          </button>
+        </div>
+
+        <div class="mt-4 flex items-center">
+          <div class="flex-grow border-t border-gray-300"></div>
+          <span class="mx-4 text-gray-500">Or Sign in with</span>
+          <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+
+        <div class="mt-4 flex justify-center space-x-4">
+          <button @click="handleGoogleLogin"
+            class="flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2" alt="Google logo">
+            <span>Google</span>
+          </button>
+
+          <button @click="handleFacebookLogin"
+            class="flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+            <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5 mr-2" alt="Facebook logo">
+            <span>Facebook</span>
+          </button>
+        </div>
+
+        <div v-if="errorMessage" class="text-red-500 text-center text-sm mt-3">
+          {{ errorMessage }}
+        </div>
+        <div class="flex justify-center mt-4 text-sm text-gray-500">
+          <span>Don't have an account?</span>
+          <nuxt-link to="/auth/signup" class="text-blue-500 font-medium hover:underline ml-2">
+            Sign Up
+          </nuxt-link>
+        </div>
+
+      </div>
+    </div>
+    <div>
+      <!-- {{ res.data.value }} -->
+    </div>
+  </div>
 </template>
-
 <script setup>
-import Blog from '~/components/Home/Home1/Blog.vue';
-import CompaniesJob from '~/components/Home/Home1/CompaniesJob.vue';
-import ExploreJob from '~/components/Home/Home1/ExploreJob.vue';
-import PopularCategories from '~/components/Home/Home1/PopularCategories.vue';
-import ServiceJob from '~/components/Home/Home1/ServicesJob.vue';
-import { useRouter } from 'vue-router';
-import {ref} from 'vue';
+import { ref } from "vue";
+import { setAuthCookies } from "~/composables/authCookie";
+import { useRouter } from "vue-router";
+import apiService from '../service/api/api.service'
+
 const router = useRouter();
+const email = ref("");
+const password = ref("");
+const errorMessage = ref("");
+const loading = ref(false);
+const res = await apiService.get('/user')
+console.log(res.data.value);
 
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
+const validatePassword = (password) => {
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  return hasUpperCase && hasNumber;
+};
+
+const handleLogin = async () => {
+  errorMessage.value = "";
+
+  if (!email.value) {
+    errorMessage.value = "Vui lòng nhập email!";
+    return;
+  }
+  if (!validateEmail(email.value)) {
+    errorMessage.value = "Email không đúng định dạng!";
+    return;
+  }
+
+  if (!password.value) {
+    errorMessage.value = "Vui lòng nhập mật khẩu!";
+    return;
+  }
+  if (!validatePassword(password.value)) {
+    errorMessage.value = "Mật khẩu phải có ít nhất 1 chữ in hoa và 1 số!";
+    return;
+  }
+
+  loading.value = true;
+
+  apiService.post('/user/login', {
+    email: email.value,
+    password: password.value,
+  }).then((res) => {
+    console.log('Response:', res.data.value); 
+    if (res.data.value) {
+      alert("Đăng nhập thành công!");
+      router.push("/home/home1");
+    } else {
+      errorMessage.value = "Đăng nhập thất bại!";
+    }
+  })
+    .catch((err) => {
+      console.log(err);
+      errorMessage.value = "Không thể kết nối đến server!";
+    })
+    .finally(() => {
+      loading.value = false;
+    });
+};
+
+const handleGoogleLogin = async () => {
+  try {
+    const auth2 = await window.gapi.auth2.getAuthInstance();
+    const googleUser = await auth2.signIn();
+
+    const profile = googleUser.getBasicProfile();
+    const googleToken = googleUser.getAuthResponse().id_token;
+
+    const response = await fetch("YOUR_BACKEND_API/auth/google", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: googleToken }),
+    });
+
+    if (!response.ok) throw new Error("Google login failed");
+
+    const data = await response.json();
+    setAuthCookies(data.accessToken, data.refreshToken, {
+      id: data.id,
+      email: profile.getEmail(),
+      firstName: profile.getGivenName(),
+      lastName: profile.getFamilyName(),
+      image: profile.getImageUrl(),
+    });
+
+    alert("Đăng nhập Google thành công!");
+    navigateTo("/");
+  } catch (error) {
+    console.error("Google login error:", error);
+    errorMessage.value = "Đăng nhập Google thất bại!";
+  }
+};
+
+const handleFacebookLogin = async () => {
+  try {
+    const response = await new Promise((resolve, reject) => {
+      FB.login((response) => {
+        if (response.authResponse) {
+          resolve(response);
+        } else {
+          reject(new Error("Facebook login cancelled"));
+        }
+      }, { scope: 'email,public_profile' });
+    });
+
+    const profile = await new Promise((resolve) => {
+      FB.api('/me', { fields: 'email,name,picture' }, (response) => {
+        resolve(response);
+      });
+    });
+
+    const apiResponse = await fetch("YOUR_BACKEND_API/auth/facebook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        accessToken: response.authResponse.accessToken,
+        userID: response.authResponse.userID
+      }),
+    });
+
+    if (!apiResponse.ok) throw new Error("Facebook login failed");
+
+    const data = await apiResponse.json();
+    setAuthCookies(data.accessToken, data.refreshToken, {
+      id: data.id,
+      email: profile.email,
+      name: profile.name,
+      image: profile.picture?.data?.url,
+    });
+
+    alert("Đăng nhập Facebook thành công!");
+    navigateTo("/");
+  } catch (error) {
+    console.error("Facebook login error:", error);
+    errorMessage.value = "Đăng nhập Facebook thất bại!";
+  }
+};
 </script>
-
-<style></style>
+<style scoped>
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+</style>

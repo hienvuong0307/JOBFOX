@@ -3,7 +3,7 @@
         class="py-2 px-4 flex justify-end">
         <div class="flex items-center justify-end w-full">
             <div class="layout-topbar-logo-container flex justify-end">
-                <nuxt-link to="/" class="flex items-center">
+                <nuxt-link to="/home/home1" class="flex items-center">
                     <svg viewBox="0 0 54 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2"></svg>
                     <div class="flex w-full justify-end items-center">
                         <img :src="scrollY === 0 ? logoLight : logoDark" alt="Logo" class="h-5" />
@@ -20,7 +20,7 @@
                         </p>
                         <div class="absolute hidden group-hover:block w-48 ">
                             <div class="flex flex-col gap-4 card rounded-md mt-8 -ml-8 bg-white border-2 border-gray-100 shadow-lg">
-                                <nuxt-link to="/" active-class="text-[#0b63f3]"
+                                <nuxt-link to="/home/home1/" active-class="text-[#0b63f3]"
                                     class="text-[12.5px] font-semibold flex items-center hover:text-[#0b63f3]"> HERO ONE
                                 </nuxt-link>
                                 <nuxt-link to="/home/home2" active-class="text-[#0b63f3]"

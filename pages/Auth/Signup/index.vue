@@ -5,7 +5,7 @@
         <div class="absolute justify-center">
             <div class="shadow-[0_0_3px_#1e293b26] rounded-[6px] p-6 w-[500px] bg-white">
                 <div class="flex justify-center">
-                    <nuxt-link to="/" class="flex items-center">
+                    <nuxt-link to="/home/home1" class="flex items-center">
                         <img src="https://fox.ai.vn/wp-content/uploads/2024/07/Logo_Original-1.png" alt="Logo"
                             class="h-[40px] w-[100px]" />
                     </nuxt-link>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <!-- <div class="flex justify-center">
     <div class="card mt-10 w-4/5">
       <div class="grid grid-cols-4 gap-4">
         <div class="col-span-4">
@@ -19,10 +19,10 @@
                           <div class="grow"></div>
                         </div>
                       </template>
-                      <template #title>
+<template #title>
                         <p class="text-[18px] font-bold">{{ item.company }}</p>
                       </template>
-                      <template #subtitle>
+<template #subtitle>
                         <p class="text-[14px] opacity-75">{{ item.CompanyTitle }}</p>
                         <div class="w-full h-[1px] bg-slate-100 mt-5"></div>
                         <div class="mt-2 gap-2 mb-8">
@@ -43,14 +43,62 @@
                           </div>
                         </div>
                       </template>
-                    </Card>
-                  </NuxtLink>
-                </div>
-              </div>
-            </template>
-          </DataView>
-        </div>
-      </div>
+</Card>
+</NuxtLink>
+</div>
+</div>
+</template>
+</DataView>
+</div>
+</div>
+</div>
+</div> -->
+
+  <div class="flex justify-center">
+    <div class="card mt-1 w-4/5">
+      <DataView :value="jobListings" class="w-full" paginator :rows="12">
+        <template #list="slotProps">
+          <div class="grid grid-cols-1 gap-4">
+            <div v-for="(item, index) in slotProps.items" :key="index" class="">
+              <NuxtLink :to="`/jobs/job-detail-two/${item.id}`" class="">
+                <Card
+                  class="h-[125px] overflow-hidden shadow-sm border rounded-lg transition duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1.5">
+                  <template #title>
+                    <div class="flex items-center gap-4 p-5">
+                      <div
+                        class="w-16 h-16 border border-slate-100 rounded-lg flex items-center justify-center shadow-sm">
+                        <img :src="item.image" :alt="item.company" class="w-14 h-14 rounded-lg bg-white p-1" />
+                      </div>
+
+                      <div class="flex flex-col flex-1">
+                        <p class="text-[18px] font-bold">{{ item.company }}</p>
+                      </div>
+
+                      <div class="flex flex-col flex-1">
+                        <span class="text-[18px]"><i class="pi pi-chevron-right"></i> {{item.position}}</span>
+                        <span class="text-[15px] font-medium opacity-75"><i class="pi pi-chevron-right opacity-75 text-[13px]"></i>{{item.positionName}}</span>
+                      </div>
+
+                      <div class="flex flex-col flex-1">
+                        <div class="text-[16px] flex items-center text-gray-500 gap-1"><i
+                            class="pi pi-map-marker text-gray-400"></i> {{ item.location }}</div>
+                        <span class="text-[16px] opacity-75 flex items-center gap-1"> <i
+                            class="pi pi-dollar text-blue-500"></i> {{ item.salary }}/mo </span>
+                      </div>
+
+                      <div class="flex items-center gap-3">
+                        <NuxtLink :to="`/jobs/job-apply/${item.id}`" class="p-button p-button-primary text-white">
+                          Apply Now
+                        </NuxtLink>
+                      </div>
+                    </div>
+                  </template>
+                </Card>
+              </NuxtLink>
+            </div>
+          </div>
+        </template>
+      </DataView>
     </div>
   </div>
 </template>
@@ -80,7 +128,7 @@ onMounted(async () => {
         image: job.CompanyLogoUrl || 'https://placehold.co/56x56/3b82f6/ffffff?text=' + job.companyName.charAt(0),
         posted: formatDate(job.createdAt),
         type: 'Full Time',
-        position: job.jobTitle, 
+        position: job.jobTitle,
         positionName: job.positionName,
         location: job.location,
         CompanyTitle: job.CompanyTitle,
